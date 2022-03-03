@@ -13,5 +13,6 @@ Things you may want to cover:
 With this app you can:
 
 - Add Ruby Memes and describe them
+- Review Memes
 - Download Ruby Memes
 - Review them

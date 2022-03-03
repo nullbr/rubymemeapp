@@ -5,11 +5,10 @@
       <b> Name </b><%= meme.name %>
       <b> Author: </b><%= meme.author %>
       <b> Description: </b><%= meme.description %>
-      <b> Created on: </b><%= meme.created_at.day.to_s + "/" + meme.created_at.month.to_s + "/" + meme.created_at.year.to_s %> 
+      <b> Created on: </b><%= date(meme) %> 
     </li>
     <p>
-      <b> Stars: </b><%= meme.stars %><br>
-      <b> Review: </b><%= meme.review %>
+      <%= show_review(meme) %>
     </p>
   <% end %>
 </ul>
