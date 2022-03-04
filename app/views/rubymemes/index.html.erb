@@ -1,8 +1,6 @@
-<ul>
+<!-- <ul>
   <% @rubymemes.each do |meme| %>
     <li>
-      <%= meme.id %>
-      <b> Name </b><%= meme.name %>
       <b> Author: </b><%= meme.author %>
       <b> Description: </b><%= meme.description %>
       <b> Created on: </b><%= date(meme) %> 
@@ -10,5 +8,24 @@
     <p>
       <%= show_review(meme) %>
     </p>
+  <% end %>
+</ul> -->
+
+<ul>
+  <% @rubymemes.each do |meme| %>
+    <section>
+      <div class="summary">
+        <h2><%= "#{meme.id}: #{meme.name}" %></h2>
+        <h3>Created by <%= meme.author %> on <%= date(meme) %></h3>
+        
+        <% if meme.no_review? %>
+          <p>This meme was not rated yet</p>
+        <% else %>
+          <p>Stars: <%= meme.stars %></p>
+          <p>Review: <%= truncate(meme.review, length: 70, separator: '') %></p>
+        <% end %>
+        </p> 
+      </div>
+    </section>
   <% end %>
 </ul>

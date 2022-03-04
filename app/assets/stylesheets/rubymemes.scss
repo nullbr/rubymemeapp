@@ -1,3 +1,34 @@
 // Place all the styles related to the rubymemes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+// Place all the styles related to the events controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+/* Fonts */
+h2 {
+    font-size: 1.2em;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: bold;
+    color: #4d6080;
+}
+
+h3 {
+    font-size: 1.2em;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: normal;
+}
+
+p {
+    font-size: 1.1em;
+    line-height: 1.7em;
+    text-align: center;
+}
