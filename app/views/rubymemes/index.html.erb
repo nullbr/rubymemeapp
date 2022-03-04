@@ -16,12 +16,13 @@
     <section>
       <div class="summary">
         <h2><%= "#{meme.id}: #{meme.name}" %></h2>
-        <h3>Created by <%= meme.author %> on <%= date(meme) %></h3>
+        <p>Created by <%= meme.author %> on <%= date(meme) %></p>
+        <h4><%= meme.description %></h4>
         
         <% if meme.no_review? %>
-          <p>This meme was not rated yet</p>
+          <h2>This meme was not rated yet</h2>
         <% else %>
-          <p>Stars: <%= meme.stars %></p>
+          <h2>Stars: <%= meme.stars %></h2>
           <p>Review: <%= truncate(meme.review, length: 70, separator: '') %></p>
         <% end %>
         </p> 

@@ -10,6 +10,10 @@
 @import "bootstrap";
 
 /* Fonts */
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1;
+}
+
 h2 {
     font-size: 1.2em;
     letter-spacing: 1px;
@@ -25,6 +29,10 @@ h3 {
     margin-bottom: 30px;
     text-align: center;
     font-weight: normal;
+}
+
+h4 {
+    text-align: center;
 }
 
 p {
