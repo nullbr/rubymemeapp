@@ -56,19 +56,30 @@ p {
 
 /* Header & Logo*/
 
-#logo {
+#logotxt {
     float: left;
     margin-right: 30px;
-    font-size: 1.7em;
+    font-size: 1.8em;
     color: #c91a1a;
     text-transform: uppercase;
     letter-spacing: -1px;
+    margin-top: 20px;
     padding: 9px;
     font-weight: bold;
 
     &:hover {
         color: #dd5454;
         text-decoration: none;
+    }
+}
+
+#logo{
+    float: left;
+    margin-right: 30px;
+    padding: 9px;
+
+    &:hover {
+        color: #dd5454;
     }
 }
 
@@ -109,7 +120,7 @@ footer {
 
 /* https://www.bootdey.com/snippets/view/about-me-section */
 
-body{margin-top:20px;}
+body{margin-top: 50px;}
 /* About Me 
 ---------------------*/
 @media (max-width: 991px) {

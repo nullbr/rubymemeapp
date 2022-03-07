@@ -20,95 +20,95 @@
 
 
 <section class="section gray-bg" id="blog">
-  <div class="container">
-      <div class="row justify-content-center">
-          <div class="col-lg-7 text-center">
-              <div class="section-title">
-                  <h2>Latest Memes</h2>
-                  <p>Here you will find all the latest Memes from the Ruby World</p>
-              </div>
-          </div>
-      </div>
-      <div class="row">
+    <div class="container">
+        <div class="summary">
+            <!-- <div class="col-lg-7 text-center">
+                <div class="section-title"> -->
+                    <h2>Latest Memes</h2>
+                    <h4>Here you will find all the latest Memes from the Ruby World</h4>
+                <!-- </div>
+            </div> -->
+        </div>
+        <div class="row">
 
-          <% i = 1 %>
-          <% t = 0 %>
-          <% size = @rubymemes.length %>
-          <% while i <= size do %>
+            <% i = 1 %>
+            <% t = 0 %>
+            <% size = @rubymemes.length %>
+            <% while i <= size do %>
     
             <% meme = @rubymemes.find_by(id:i) %>
             <% if t == 0 %>
-              <div class="col-lg-4">
-                  <div class="blog-grid">
-                      <div class="blog-img">
-                          <div class="date"><%= day_month(meme) %></div>
-                          <a href="#">
-                              <img src="https://via.placeholder.com/350x280/FFB6C1/000000" title="" alt="">
-                          </a>
-                      </div>
-                      <div class="blog-info">
-                          <h5><a href="#"><%= meme.name %></a></h5>
-                          <p><%= truncate(meme.review, length: 70, separator: '') %></p>
-                          <div class="btn-bar">
-                              <a href="#" class="px-btn-arrow">
-                                  <span>Read More</span>
-                                  <i class="arrow"></i>
-                              </a>
-                          </div>
-                      </div>
-                  </div>
-              </div>
+                <div class="col-lg-4">
+                    <div class="blog-grid">
+                        <div class="blog-img">
+                            <div class="date"><%= day_month(meme) %></div>
+                            <a href="#">
+                                <img src="https://pm1.narvii.com/6131/81907585d56af524cd827732bba8391851830bb7_hq.jpg" title="" alt="">
+                            </a>
+                        </div>
+                        <div class="blog-info">
+                            <h5><a href="#"><%= meme.name %></a></h5>
+                            <p><%= truncate(meme.review, length: 70, separator: '') %></p>
+                            <div class="btn-bar">
+                                <a href="#" class="px-btn-arrow">
+                                    <span>Read More</span>
+                                    <i class="arrow"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             <% end %>
             
             <% if t == 1 %>  
-              <div class="col-lg-4">
-                  <div class="blog-grid">
-                      <div class="blog-img">
-                          <div class="date"><%= day_month(meme) %></div>
-                          <a href="#">
-                              <img src="https://via.placeholder.com/350x280/87CEFA/000000" title="" alt="">
-                          </a>
-                      </div>
-                      <div class="blog-info">
-                          <h5><a href="#"><%= meme.name %></a></h5>
-                          <p><%= truncate(meme.review, length: 70, separator: '') %></p>
-                          <div class="btn-bar">
-                              <a href="#" class="px-btn-arrow">
-                                  <span>Read More</span>
-                                  <i class="arrow"></i>
-                              </a>
-                          </div>
-                      </div>
-                  </div>
-              </div>
+                <div class="col-lg-4">
+                    <div class="blog-grid">
+                        <div class="blog-img">
+                            <div class="date"><%= day_month(meme) %></div>
+                            <a href="#">
+                                <img src="https://pm1.narvii.com/6131/81907585d56af524cd827732bba8391851830bb7_hq.jpg" title="" alt="">
+                            </a>
+                        </div>
+                        <div class="blog-info">
+                            <h5><a href="#"><%= meme.name %></a></h5>
+                            <p><%= truncate(meme.review, length: 70, separator: '') %></p>
+                            <div class="btn-bar">
+                                <a href="#" class="px-btn-arrow">
+                                    <span>Read More</span>
+                                    <i class="arrow"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             <% end %>
 
             <% if t == 2 %> 
-              <div class="col-lg-4">
-                  <div class="blog-grid">
-                      <div class="blog-img">
-                          <div class="date"><%= day_month(meme) %></div>
-                          <a href="#">
-                              <img src="https://via.placeholder.com/350x280/FF7F50/000000" title="" alt="">
-                          </a>
-                      </div>
-                      <div class="blog-info">
-                          <h5><a href="#"><%= meme.name %></a></h5>
-                          <p><%= truncate(meme.review, length: 70, separator: '') %></p>
-                          <div class="btn-bar">
-                              <a href="#" class="px-btn-arrow">
-                                  <span>Read More</span>
-                                  <i class="arrow"></i>
-                              </a>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-              <% t -= 3 %> 
+                <div class="col-lg-4">
+                    <div class="blog-grid">
+                        <div class="blog-img">
+                            <div class="date"><%= day_month(meme) %></div>
+                            <a href="#">
+                                <img src="https://pm1.narvii.com/6131/81907585d56af524cd827732bba8391851830bb7_hq.jpg" title="" alt="">
+                            </a>
+                        </div>
+                        <div class="blog-info">
+                            <h5><a href="#"><%= meme.name %></a></h5>
+                            <p><%= truncate(meme.review, length: 70, separator: '') %></p>
+                            <div class="btn-bar">
+                                <a href="#" class="px-btn-arrow">
+                                    <span>Read More</span>
+                                    <i class="arrow"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <% t -= 3 %> 
             <% end %>
             <% i += 1 %>
             <% t += 1 %>
-          <% end %>
-      </div>
-  </div>
+            <% end %>
+        </div>
+    </div>
 </section>
