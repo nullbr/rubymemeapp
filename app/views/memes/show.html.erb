@@ -4,11 +4,12 @@
             <div class="row align-items-center justify-content-around flex-row-reverse">
                 <div class="col-lg-6">
                     <div class="about-text">
-                        <h3 class="dark-color"><%= @rubymemes.name %></h3>
-                        <h4 class="theme-color"><%= day_month(@rubymemes) %> by <%= @rubymemes.author %></h4>
-                        <p><%= @rubymemes.description %></p>
+                        <h3 class="dark-color"><%= @meme.name %></h3>
+                        <h4 class="theme-color"><%= day_month(@meme) %> by <%= @meme.author %></h4>
+                        <p><%= @meme.description %></p>
                         <div class="btn-bar">
                             <a class="px-btn theme" href="#">Download</a>
+                            <a class="px-btn theme" href=<%= edit_meme_path %>>Edit</a>
                         </div>
                     </div>
                 </div>

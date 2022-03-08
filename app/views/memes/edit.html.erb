@@ -1,0 +1,19 @@
+<h1>Editing <%= @meme.name %></h1>
+
+<%= form_with(model: @meme) do |m| %>
+    <%= m.label :name %>
+    <%= m.text_field :name %>
+
+    <%= m.label :description %>
+    <%= m.text_field :description, rows: 5 %>
+
+    <%= m.label :author %>
+    <%= m.text_field :author %>
+
+    <%= m.label :stars %>
+    <%= m.number_field :stars %>
+
+    <%= m.label :review %>
+    <%= m.text_field :review, rows: 3 %>
+
+<% end %>

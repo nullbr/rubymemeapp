@@ -1,0 +1,240 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+/* Template source: https://www.bootdey.com/snippets/view/about-me-section */
+
+body{margin-top:70px;}
+
+.section {
+    padding: 100px 0;
+    position: relative;
+}
+.gray-bg {
+    background-color: #ebf4fa;
+}
+/* CSS for index page
+
+---------------------*/
+.blog-grid {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.blog-grid .blog-img {
+  position: relative;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.blog-grid .blog-img .date {
+  position: absolute;
+  background: #3a3973;
+  color: #ffffff;
+  padding: 8px 15px;
+  left: 0;
+  top: 10px;
+  font-size: 14px;
+}
+.blog-grid .blog-info {
+  box-shadow: 0 0 30px rgba(31, 45, 61, 0.125);
+  border-radius: 5px;
+  background: #ffffff;
+  padding: 20px;
+  margin: -30px 20px 0;
+  position: relative;
+}
+.blog-grid .blog-info h5 {
+  font-size: 22px;
+  font-weight: 500;
+  margin: 0 0 10px;
+}
+.blog-grid .blog-info h5 a {
+  color: #3a3973;
+}
+.blog-grid .blog-info p {
+  margin: 0;
+}
+.blog-grid .blog-info .btn-bar {
+  margin-top: 20px;
+}
+
+.px-btn-arrow {
+    padding: 0 50px 0 0;
+    line-height: 20px;
+    position: relative;
+    display: inline-block;
+    color: #fe4f6c;
+    -moz-transition: ease all 0.3s;
+    -o-transition: ease all 0.3s;
+    -webkit-transition: ease all 0.3s;
+    transition: ease all 0.3s;
+}
+
+
+.px-btn-arrow .arrow {
+    width: 13px;
+    height: 2px;
+    background: currentColor;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    right: 25px;
+    -moz-transition: ease right 0.3s;
+    -o-transition: ease right 0.3s;
+    -webkit-transition: ease right 0.3s;
+    transition: ease right 0.3s;
+}
+
+.px-btn-arrow .arrow:after {
+    width: 8px;
+    height: 8px;
+    border-right: 2px solid currentColor;
+    border-top: 2px solid currentColor;
+    content: "";
+    position: absolute;
+    top: -3px;
+    right: 0;
+    display: inline-block;
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+/* CSS for Show page 
+---------------------*/
+@media (max-width: 991px) {
+  .about-text {
+    margin-top: 40px;
+  }
+}
+.about-text h3 {
+  font-size: 45px;
+  font-weight: 700;
+  margin: 0 0 10px;
+}
+@media (max-width: 767px) {
+  .about-text h3 {
+    font-size: 35px;
+  }
+}
+.about-text h4 {
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+@media (max-width: 767px) {
+  .about-text h4 {
+    font-size: 18px;
+  }
+}
+.about-text p {
+  font-size: 18px;
+}
+.about-text p mark {
+  font-weight: 600;
+  color: #3a3973;
+}
+.about-text .btn-bar {
+  padding-top: 8px;
+}
+.about-text .btn-bar a {
+  min-width: 150px;
+  text-align: center;
+  margin-right: 10px;
+}
+
+.about-list {
+  padding-top: 10px;
+}
+.about-list .media {
+  padding: 5px 0;
+}
+.about-list label {
+  color: #3a3973;
+  font-weight: 600;
+  width: 88px;
+  margin: 0;
+  position: relative;
+}
+.about-list label:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 11px;
+  width: 1px;
+  height: 12px;
+  background: #3a3973;
+  -moz-transform: rotate(15deg);
+  -o-transform: rotate(15deg);
+  -ms-transform: rotate(15deg);
+  -webkit-transform: rotate(15deg);
+  transform: rotate(15deg);
+  margin: auto;
+  opacity: 0.5;
+}
+.about-list p {
+  margin: 0;
+  font-size: 15px;
+}
+
+.about-img {
+  box-shadow: 0 5px 14px 0 rgba(0, 0, 0, 0.06);
+  padding: 10px;
+  background: #ffffff;
+}
+@media (max-width: 991px) {
+  .about-img {
+    margin-top: 30px;
+  }
+}
+
+.counter-section {
+  padding: 40px 20px;
+}
+.counter-section .count-data {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.counter-section .count {
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 10px;
+}
+.counter-section p {
+  font-weight: 500;
+  margin: 0;
+  color: #fe4f6c;
+}
+.theme-color {
+    color: #fe4f6c;
+}
+
+.px-btn.theme {
+    background: #fe4f6c;
+    color: #ffffff;
+    border: 2px solid #fe4f6c;
+}
+.px-btn {
+    padding: 0 20px;
+    line-height: 42px;
+    border: 2px solid transparent;
+    position: relative;
+    display: inline-block;
+    background: none;
+    border: none;
+    -moz-transition: ease all 0.35s;
+    -o-transition: ease all 0.35s;
+    -webkit-transition: ease all 0.35s;
+    transition: ease all 0.35s;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.px-btn.theme-t {
+    background: transparent;
+    border: 2px solid #fe4f6c;
+    color: #fe4f6c;
+}

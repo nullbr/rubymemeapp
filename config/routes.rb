@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
 
-  root "rubymemes#index"
+  root "memes#index"
 
-  get "rubymemes", to: "rubymemes#index"
-  get "rubymemes/:id", to: "rubymemes#show", as: "rubymeme"
+  get "memes", to: "memes#index"
+  get "memes/:id", to: "memes#show", as: "meme"
+  get "memes/:id/edit", to: "memes#edit", as: "edit_meme"
+
 end
