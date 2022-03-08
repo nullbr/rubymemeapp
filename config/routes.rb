@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
-  get "rubymemes" => "rubymemes#index"
-  get "rubymemes/:id" => "rubymemes#show"
+
+  root "rubymemes#index"
+
+  get "rubymemes", to: "rubymemes#index"
+  get "rubymemes/:id", to: "rubymemes#show", as: "rubymeme"
 end

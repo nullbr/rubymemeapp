@@ -21,13 +21,13 @@
 
 <section class="section gray-bg" id="blog">
     <div class="container">
-        <div class="summary">
-            <!-- <div class="col-lg-7 text-center">
-                <div class="section-title"> -->
+        <div class="row text-center">
+            <div class="col-lg-7 text-center">
+                <div class="section-title">
                     <h2>Latest Memes</h2>
                     <h4>Here you will find all the latest Memes from the Ruby World</h4>
-                <!-- </div>
-            </div> -->
+                </div>
+            </div>
         </div>
         <div class="row">
 
@@ -42,15 +42,15 @@
                     <div class="blog-grid">
                         <div class="blog-img">
                             <div class="date"><%= day_month(meme) %></div>
-                            <a href="#">
+                            <a href=<%= rubymeme_path(meme.id) %>>
                                 <img src="https://pm1.narvii.com/6131/81907585d56af524cd827732bba8391851830bb7_hq.jpg" title="" alt="">
                             </a>
                         </div>
                         <div class="blog-info">
-                            <h5><a href="#"><%= meme.name %></a></h5>
+                            <h5><a href=<%= rubymeme_path(meme.id) %>><%= meme.name %></a></h5>
                             <p><%= truncate(meme.review, length: 70, separator: '') %></p>
                             <div class="btn-bar">
-                                <a href="#" class="px-btn-arrow">
+                                <a href=<%= rubymeme_path(meme.id) %> class="px-btn-arrow">
                                     <span>Read More</span>
                                     <i class="arrow"></i>
                                 </a>
@@ -65,15 +65,15 @@
                     <div class="blog-grid">
                         <div class="blog-img">
                             <div class="date"><%= day_month(meme) %></div>
-                            <a href="#">
+                            <a href=<%= rubymeme_path(meme.id) %>>
                                 <img src="https://pm1.narvii.com/6131/81907585d56af524cd827732bba8391851830bb7_hq.jpg" title="" alt="">
                             </a>
                         </div>
                         <div class="blog-info">
-                            <h5><a href="#"><%= meme.name %></a></h5>
+                            <h5><a href=<%= rubymeme_path(meme.id) %>><%= meme.name %></a></h5>
                             <p><%= truncate(meme.review, length: 70, separator: '') %></p>
                             <div class="btn-bar">
-                                <a href="#" class="px-btn-arrow">
+                                <a href=<%= rubymeme_path(meme.id) %> class="px-btn-arrow">
                                     <span>Read More</span>
                                     <i class="arrow"></i>
                                 </a>
@@ -88,15 +88,15 @@
                     <div class="blog-grid">
                         <div class="blog-img">
                             <div class="date"><%= day_month(meme) %></div>
-                            <a href="#">
+                            <a href=<%= rubymeme_path(meme.id) %>>
                                 <img src="https://pm1.narvii.com/6131/81907585d56af524cd827732bba8391851830bb7_hq.jpg" title="" alt="">
                             </a>
                         </div>
                         <div class="blog-info">
-                            <h5><a href="#"><%= meme.name %></a></h5>
+                            <h5><a href=<%= rubymeme_path(meme.id) %>><%= meme.name %></a></h5>
                             <p><%= truncate(meme.review, length: 70, separator: '') %></p>
                             <div class="btn-bar">
-                                <a href="#" class="px-btn-arrow">
+                                <a href=<%= rubymeme_path(meme.id) %> class="px-btn-arrow">
                                     <span>Read More</span>
                                     <i class="arrow"></i>
                                 </a>
