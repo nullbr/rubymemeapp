@@ -5,7 +5,7 @@ module MemesHelper
     end
 
     def day_month(meme)
-        # meme.created_at.strftime("%d %M")
+        meme.updated_at.strftime("%d %^b %Y")
     end
 
 end

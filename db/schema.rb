@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_03_014640) do
+ActiveRecord::Schema.define(version: 2022_03_08_223005) do
 
   create_table "memes", force: :cascade do |t|
     t.string "name"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2022_03_03_014640) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "stars"
     t.text "review"
+    t.string "image_url"
   end
 
 end
