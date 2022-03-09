@@ -10,7 +10,7 @@
           <h2>This meme was not rated yet</h2>
         <% else %>
           <h2>Stars: <%= meme.stars %></h2>
-          <p>Review: <%= truncate(meme.review, length: 70, separator: '') %></p>
+          <p>Review: <%= truncate(meme.description, length: 70, separator: '') %></p>
         <% end %>
         </p> 
       </div>
@@ -26,6 +26,9 @@
                 <div class="section-title">
                     <h2>Latest Memes</h2>
                     <h4>Here you will find all the latest Memes from the Ruby World</h4>
+                </div>
+                <div class="btn-bar">
+                    <%= link_to "Upload a Meme!", new_meme_path, class: "px-btn-arrow" %>
                 </div>
             </div>
         </div>
@@ -51,10 +54,10 @@
                         </div>
                         <div class="blog-info">
                             <h5><a href=<%= meme_path(meme.id) %>><%= meme.name %></a></h5>
-                            <p><%= truncate(meme.review, length: 70, separator: '') %></p>
+                            <p><%= truncate(meme.description, length: 90, separator: '') %></p>
                             <div class="btn-bar">
                                 <a href=<%= meme_path(meme.id) %> class="px-btn-arrow">
-                                    <span>Read More</span>
+                                    <span>Learn More</span>
                                     <i class="arrow"></i>
                                 </a>
                             </div>
@@ -74,10 +77,10 @@
                         </div>
                         <div class="blog-info">
                             <h5><a href=<%= meme_path(meme.id) %>><%= meme.name %></a></h5>
-                            <p><%= truncate(meme.review, length: 70, separator: '') %></p>
+                            <p><%= truncate(meme.description, length: 90, separator: '') %></p>
                             <div class="btn-bar">
                                 <a href=<%= meme_path(meme.id) %> class="px-btn-arrow">
-                                    <span>Read More</span>
+                                    <span>Learn More</span>
                                     <i class="arrow"></i>
                                 </a>
                             </div>
@@ -97,10 +100,10 @@
                         </div>
                         <div class="blog-info">
                             <h5><a href=<%= meme_path(meme.id) %>><%= meme.name %></a></h5>
-                            <p><%= truncate(meme.review, length: 70, separator: '') %></p>
+                            <p><%= truncate(meme.description, length: 90, separator: '') %></p>
                             <div class="btn-bar">
                                 <a href=<%= meme_path(meme.id) %> class="px-btn-arrow">
-                                    <span>Read More</span>
+                                    <span>Learn More</span>
                                     <i class="arrow"></i>
                                 </a>
                             </div>
