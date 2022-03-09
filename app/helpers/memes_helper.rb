@@ -5,7 +5,11 @@ module MemesHelper
     end
 
     def day_month(meme)
-        meme.updated_at.strftime("%d %^b %Y")
+        if meme.blank?
+            "no date"
+        else
+            meme.updated_at.strftime("%d %b %Y")
+        end
     end
 
 end

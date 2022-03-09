@@ -7,9 +7,9 @@
                     <h4 class="theme-color"><%= day_month(@meme) %> by <%= @meme.author %></h4>
                     <p><%= @meme.description %></p>
                     <div class="btn-bar">
-                        <a class="px-btn theme" href="#">Download</a>
+                        <a class="px-btn theme" href=<%= @meme.image_url %> download=<%= @meme.name %>>Download</a>
                         <a class="px-btn theme" href=<%= edit_meme_path %>>Edit</a>
-                        <a class="px-btn theme" href=<%= delete_meme_path %>>Delete</a>
+                        <%= link_to "Delete", @meme, method: :delete, data: { confirm: "Are you sure you want to delete this item?" }, class: "px-btn theme" %>
                     </div>
                 </div>
             </div>

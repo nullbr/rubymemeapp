@@ -1,24 +1,3 @@
-<!-- <ul>
-  <% @memes.each do |meme| %>
-    <section>
-      <div class="summary">
-        <h2><%= "#{meme.id}: #{meme.name}" %></h2>
-        <p>Created by <%= meme.author %> on <%= date(meme) %></p>
-        <h4><%= meme.description %></h4>
-        
-        <% if meme.no_review? %>
-          <h2>This meme was not rated yet</h2>
-        <% else %>
-          <h2>Stars: <%= meme.stars %></h2>
-          <p>Review: <%= truncate(meme.description, length: 70, separator: '') %></p>
-        <% end %>
-        </p> 
-      </div>
-    </section>
-  <% end %>
-</ul> -->
-
-
 <section class="section gray-bg" id="blog">
     <div class="container">
         <div class="row text-center">
@@ -36,84 +15,36 @@
 
             <!-- Displays all memes in db from last added to most recent -->
             
-            <% t = 0 %>
             <% size = @memes.length %>
             <% i = size %>
 
             <% while size >= i && i > 0 do %>
     
-            <% meme = @memes.find_by(id:i) %>
-            <% if t == 0 %>
-                <div class="col-lg-4">
-                    <div class="blog-grid">
-                        <div class="blog-img">
-                            <div class="date"><%= day_month(meme) %></div>
-                            <a href=<%= meme_path(meme.id) %>>
-                                <img src=<%= meme.image_url %> width="400px" height="320px" class="fill" >
-                            </a>
-                        </div>
-                        <div class="blog-info">
-                            <h5><a href=<%= meme_path(meme.id) %>><%= meme.name %></a></h5>
-                            <p><%= truncate(meme.description, length: 90, separator: '') %></p>
-                            <div class="btn-bar">
-                                <a href=<%= meme_path(meme.id) %> class="px-btn-arrow">
-                                    <span>Learn More</span>
-                                    <i class="arrow"></i>
+                <% meme = @memes.find_by(id:i) %>
+                <% unless meme.nil? || meme == 0 %>
+                    <div class="col-lg-4">
+                        <div class="blog-grid">
+                            <div class="blog-img">
+                                <div class="date"><%= day_month(meme) %></div>
+                                <a href=<%= meme_path(meme.id) %>>
+                                    <img src=<%= meme.image_url %> width="400px" height="320px" class="fill" >
                                 </a>
+                            </div>
+                            <div class="blog-info">
+                                <h5><a href=<%= meme_path(meme.id) %>><%= meme.name %></a></h5>
+                                <p><%= truncate(meme.description, length: 90, separator: '') %></p>
+                                <div class="btn-bar">
+                                    <a href=<%= meme_path(meme.id) %> class="px-btn-arrow">
+                                        <span>Learn More</span>
+                                        <i class="arrow"></i>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            <% end %>
+                <% end %>
             
-            <% if t == 1 %>  
-                <div class="col-lg-4">
-                    <div class="blog-grid">
-                        <div class="blog-img">
-                            <div class="date"><%= day_month(meme) %></div>
-                            <a href=<%= meme_path(meme.id) %>>
-                                <img src=<%= meme.image_url %> width="400px" height="320px" class="fill" >
-                            </a>
-                        </div>
-                        <div class="blog-info">
-                            <h5><a href=<%= meme_path(meme.id) %>><%= meme.name %></a></h5>
-                            <p><%= truncate(meme.description, length: 90, separator: '') %></p>
-                            <div class="btn-bar">
-                                <a href=<%= meme_path(meme.id) %> class="px-btn-arrow">
-                                    <span>Learn More</span>
-                                    <i class="arrow"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            <% end %>
-
-            <% if t == 2 %> 
-                <div class="col-lg-4">
-                    <div class="blog-grid">
-                        <div class="blog-img">
-                            <div class="date"><%= day_month(meme) %></div>
-                            <a href=<%= meme_path(meme.id) %>>
-                                <img src=<%= meme.image_url %> width="400px" height="320px" class="fill" >
-                            </a>
-                        </div>
-                        <div class="blog-info">
-                            <h5><a href=<%= meme_path(meme.id) %>><%= meme.name %></a></h5>
-                            <p><%= truncate(meme.description, length: 90, separator: '') %></p>
-                            <div class="btn-bar">
-                                <a href=<%= meme_path(meme.id) %> class="px-btn-arrow">
-                                    <span>Learn More</span>
-                                    <i class="arrow"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <% t -= 3 %> 
-            <% end %>
-            <% i -= 1 %>
-            <% t += 1 %>
+                <% i -= 1 %>
             <% end %>
         </div>
     </div>
