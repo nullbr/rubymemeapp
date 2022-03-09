@@ -31,10 +31,13 @@
         </div>
         <div class="row">
 
-            <% i = 1 %>
+            <!-- Displays all memes in db from last added to most recent -->
+            
             <% t = 0 %>
             <% size = @memes.length %>
-            <% while i <= size do %>
+            <% i = size %>
+
+            <% while size >= i && i > 0 do %>
     
             <% meme = @memes.find_by(id:i) %>
             <% if t == 0 %>
@@ -43,7 +46,7 @@
                         <div class="blog-img">
                             <div class="date"><%= day_month(meme) %></div>
                             <a href=<%= meme_path(meme.id) %>>
-                                <img src=<%= meme.image_url %> title="" alt="">
+                                <img src=<%= meme.image_url %> width="400px" height="320px" class="fill" >
                             </a>
                         </div>
                         <div class="blog-info">
@@ -66,7 +69,7 @@
                         <div class="blog-img">
                             <div class="date"><%= day_month(meme) %></div>
                             <a href=<%= meme_path(meme.id) %>>
-                                <img src=<%= meme.image_url %> title="" alt="">
+                                <img src=<%= meme.image_url %> width="400px" height="320px" class="fill" >
                             </a>
                         </div>
                         <div class="blog-info">
@@ -89,7 +92,7 @@
                         <div class="blog-img">
                             <div class="date"><%= day_month(meme) %></div>
                             <a href=<%= meme_path(meme.id) %>>
-                                <img src=<%= meme.image_url %> title="" alt="">
+                                <img src=<%= meme.image_url %> width="400px" height="320px" class="fill" >
                             </a>
                         </div>
                         <div class="blog-info">
@@ -106,7 +109,7 @@
                 </div>
                 <% t -= 3 %> 
             <% end %>
-            <% i += 1 %>
+            <% i -= 1 %>
             <% t += 1 %>
             <% end %>
         </div>

@@ -33,6 +33,14 @@ body{margin-top:70px;}
   top: 10px;
   font-size: 14px;
 }
+
+/* img {
+  width: 350px;
+  height: 280px;
+} */
+
+.fill { object-fit: fill; }
+
 .blog-grid .blog-info {
   box-shadow: 0 0 30px rgba(31, 45, 61, 0.125);
   border-radius: 5px;
@@ -102,7 +110,7 @@ body{margin-top:70px;}
     transform: rotate(45deg);
 }
 
-/* CSS for Show page 
+/* CSS for Show page https://www.bootdey.com/snippets/view/about-me-section
 ---------------------*/
 @media (max-width: 991px) {
   .about-text {
