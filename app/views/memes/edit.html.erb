@@ -1,61 +1,19 @@
-<%= form_with(model: @meme, local: true) do |m| %>
-    <section class="section about-section gray-bg">
-        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
-        <div class="container">
-            
-            <div class="side-bar">
-                <div class="user-info">
-                    <img class="img-profile img-responsive center-block" src=<%= @meme.image_url %> alt="">
-                    <ul class="meta list list-unstyled center">
-                        <li class="name"><%= @meme.name %>
-                            <label class="label label-info">Author: <%= @meme.author %></label>
-                        </li>
-                        <li class="activity">Last updated in: <%= day_month(@meme) %></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="content-panel">
-                <form class="form-horizontal">
-                    
-                        <fieldset class="fieldset">
-                            <h3 class="fieldset-title">Meme info</h3>
-                            <div class="form-group">
-                                <label class="col-md-2 col-sm-3 col-xs-12 control-label"><%= m.label :name %></label>
-                                <div class="col-md-10 col-sm-9 col-xs-12">
-                                    <%= m.text_field :name, {class: "form-control"}%>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="col-md-2 col-sm-3 col-xs-12 control-label"><%= m.label :author %></label>
-                                <div class="col-md-10 col-sm-9 col-xs-12">
-                                    <%= m.text_field :author, {class: "form-control"}%>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-md-2 col-sm-3 col-xs-12 control-label"><%= m.label :description %></label>
-                                <div class="col-md-10 col-sm-9 col-xs-12">
-                                    <%= m.text_field :description, {class: "form-control"} %>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label class="col-md-2 col-sm-3 col-xs-12 control-label"><%= m.label :image_url %></label>
-                                <div class="col-md-10 col-sm-9 col-xs-12">
-                                    <%= m.text_field :image_url, {class: "form-control"} %>
-                                </div>
-                            </div>
-                        </fieldset>
-                        
-                        <hr>
-                        <div class="form-group">
-                            <div class="col-md-10 col-sm-9 col-xs-12 col-md-push-2 col-sm-push-3 col-xs-push-0">
-                                <%= m.submit "Save Changes", {class: "btn btn-primary"} %>
-                            </div>
-                        </div>
-                    
-                </form>
-                   
+<section class="section about-section gray-bg">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+    <div class="container">
+        
+        <div class="side-bar">
+            <div class="user-info">
+                <img class="img-profile img-responsive center-block" src=<%= @meme.image_url %> alt="">
+                <ul class="meta list list-unstyled center">
+                    <li class="name"><%= @meme.name %>
+                        <label class="label label-info">Author: <%= @meme.author %></label>
+                    </li>
+                    <li class="activity">Last updated in: <%= day_month(@meme) %></li>
+                </ul>
             </div>
         </div>
-    </section>
-<% end %> 
+
+        <%= render "form", meme:@meme %>
+    </div>
+</section>
