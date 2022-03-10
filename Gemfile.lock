@@ -221,7 +221,7 @@ DEPENDENCIES
   jbuilder (~> 2.7)
   listen (~> 3.2)
   pg (= 1.1.4)
-  puma (~> 4.1)
+  puma
   rails (~> 6.0.4, >= 6.0.4.6)
   sass-rails (>= 6)
   selenium-webdriver
