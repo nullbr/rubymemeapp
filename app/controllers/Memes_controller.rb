@@ -1,6 +1,6 @@
 class MemesController < ApplicationController
   def index
-    @memes = Meme.descorder
+    @memes = Meme.all
   end
 
   def show
