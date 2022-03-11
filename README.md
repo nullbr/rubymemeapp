@@ -1,3 +1,7 @@
+![Screenshot from 2022-03-10 14-50-34](https://user-images.githubusercontent.com/94543524/157724548-3da9e036-949c-4a62-9681-0cebf1de5d53.png)
+
+https://rubymemeapp.herokuapp.com/
+
 # Ruby Meme App README
 
 Ruby is a member of the Crystal Gems who made her official debut in "Jail Break". Originally a Homeworld Gem soldier assigned to protect Sapphire during a mission on Earth, the two accidentally fused and were forced to flee to prevent Ruby from being shattered by Blue Diamond.
