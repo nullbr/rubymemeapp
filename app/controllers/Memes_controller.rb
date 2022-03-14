@@ -1,6 +1,6 @@
 class MemesController < ApplicationController
   def index
-    @memes = Meme.all
+    @memes = Meme.descorder
   end
 
   def show
@@ -37,7 +37,7 @@ private
 
   def meme_params
     params.require(:meme).
-        permit(:name, :description, :author, :image_url) 
+        permit(:name, :description, :author, :image_file_name) 
   end
 
 end

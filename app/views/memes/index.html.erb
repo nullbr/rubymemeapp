@@ -18,7 +18,7 @@
                         <div class="blog-img">
                             <div class="date"><%= day_month(meme) %></div>
                             <a href=<%= meme_path(meme.id) %>>
-                                <img src=<%= meme.image_url %> width="400px" height="320px" class="fill" >
+                                <%= image_tag meme.image_file_name, style: 'height:320px;width:400;', class: "fill" %>
                             </a>
                         </div>
                         <div class="blog-info">

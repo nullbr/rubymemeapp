@@ -18,9 +18,7 @@ ActiveRecord::Schema.define(version: 2022_03_08_223005) do
     t.string "author"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "stars"
-    t.text "review"
-    t.string "image_url"
+    t.string "image_file_name", default: "rubylogo.png"
   end
 
 end

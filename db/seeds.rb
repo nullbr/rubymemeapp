@@ -14,9 +14,7 @@ Meme.create! ([
             a happy ruby a happy ruby a happy ruby a happy ruby
         }.squish,
         author: "Bruno",
-        stars: 3,
-        review: "not a greate happy ruby meme",
-        image_url: "https://pm1.narvii.com/6131/81907585d56af524cd827732bba8391851830bb7_hq.jpg"
+        image_file_name: "https://pm1.narvii.com/6131/81907585d56af524cd827732bba8391851830bb7_hq.jpg"
     },
     {
         name: "Sad Ruby",
@@ -25,9 +23,7 @@ Meme.create! ([
             a sad ruby a sad ruby a sad ruby a sad ruby
         }.squish,
         author: "Bruno",
-        stars: 5,
-        review: "pretty funny this sad meme haha",
-        image_url: "https://pm1.narvii.com/6131/81907585d56af524cd827732bba8391851830bb7_hq.jpg"
+        image_file_name: "https://pm1.narvii.com/6131/81907585d56af524cd827732bba8391851830bb7_hq.jpg"
     },
     {
         name: "Cool Ruby",
@@ -36,9 +32,7 @@ Meme.create! ([
             a cool ruby a cool ruby a cool ruby a cool ruby
         }.squish,
         author: "Bruno",
-        stars: 5,
-        review: "realy cool ruby meme",
-        image_url: "https://pm1.narvii.com/6131/81907585d56af524cd827732bba8391851830bb7_hq.jpg"
+        image_file_name: "https://pm1.narvii.com/6131/81907585d56af524cd827732bba8391851830bb7_hq.jpg"
     },
     {
         name: "Good Ruby",
@@ -47,7 +41,6 @@ Meme.create! ([
             a good ruby a good ruby a good ruby a good ruby
         }.squish,
         author: "Bruno",
-        stars: 3,
-        image_url: "https://pm1.narvii.com/6131/81907585d56af524cd827732bba8391851830bb7_hq.jpg"
+        image_file_name: "https://pm1.narvii.com/6131/81907585d56af524cd827732bba8391851830bb7_hq.jpg"
     }
 ])

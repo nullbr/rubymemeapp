@@ -4,7 +4,7 @@
         
         <div class="side-bar">
             <div class="user-info">
-                <img class="img-profile img-responsive center-block" src=<%= @meme.image_url %> alt="">
+                <%= image_tag @meme.image_file_name, class: "img-profile img-responsive center-block" %>
                 <ul class="meta list list-unstyled center">
                     <li class="name"><%= @meme.name %>
                         <label class="label label-info">Author: <%= @meme.author %></label>
