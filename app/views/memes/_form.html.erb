@@ -1,9 +1,12 @@
-<%= form_with(model: @meme, local: true) do |m| %>
+<%= form_with(model: meme, local: true) do |m| %>
     <div class="content-panel">
         <form class="form-horizontal">
             
             <fieldset class="fieldset">
                 <h3 class="fieldset-title">Meme info</h3>
+
+                <%= render "shared/errors", object: meme %>
+
                 <div class="form-group">
                     <%= m.label :name, class: "col-md-2 col-sm-3 col-xs-12 control-label" %>
                     <div class="col-md-10 col-sm-9 col-xs-12">
