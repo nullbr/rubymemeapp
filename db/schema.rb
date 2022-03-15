@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_08_223005) do
+ActiveRecord::Schema.define(version: 2022_03_15_200331) do
 
   create_table "memes", force: :cascade do |t|
     t.string "name"
@@ -21,4 +21,15 @@ ActiveRecord::Schema.define(version: 2022_03_08_223005) do
     t.string "image_file_name", default: "rubylogo.png"
   end
 
+  create_table "reviews", force: :cascade do |t|
+    t.string "username"
+    t.string "email"
+    t.text "review"
+    t.integer "meme_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["meme_id"], name: "index_reviews_on_meme_id"
+  end
+
+  add_foreign_key "reviews", "memes"
 end
