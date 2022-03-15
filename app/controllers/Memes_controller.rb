@@ -14,7 +14,7 @@ class MemesController < ApplicationController
   def update
     @meme = Meme.find(params[:id])
     if @meme.update(meme_params)
-      redirect_to @meme
+      redirect_to @meme, notice: "Meme successfuly updated"
     else
       render :edit
     end
@@ -27,7 +27,7 @@ class MemesController < ApplicationController
   def create
     @meme = Meme.create(meme_params)
     if @meme.save
-        redirect_to @meme
+      redirect_to @meme, notice: "Meme saved successfuly"
     else
       render :new
     end

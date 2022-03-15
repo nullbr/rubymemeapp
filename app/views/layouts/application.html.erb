@@ -13,9 +13,12 @@
   <body>
     <%= render 'layouts/header' %>
 
-    <div class="containers">
+    <section class="section about-section gray-bg">
+      <%= render 'layouts/flash'%>
       <%= yield %>
-      <%= render 'layouts/footer' %>
-    </div>
+     
+    </section>
+
+    <%= render 'layouts/footer' %>
   </body>
 </html>

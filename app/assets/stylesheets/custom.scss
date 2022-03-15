@@ -120,7 +120,7 @@ footer {
 
 /* Template source: https://www.bootdey.com/snippets/view/about-me-section */
 
-body{margin-top:70px;}
+body{margin-top:50px;}
 
 .section {
     padding: 100px 0;
@@ -944,13 +944,26 @@ color: #a2a6af
 
 /* CSS for validation message https://codepen.io/palimadra/pen/OVvbaY */
 
-.validation{
-    border: 1px solid;
-    margin: 10px 0px;
-    padding: 15px 10px 15px 50px;
-    background-repeat: no-repeat;
-    background-position: 10px center;
-    color: #D63301;
-    background-color: #FFCCBA;
+.validation, .success, .warning{
+  border: 1px solid;
+  margin: 10px 0px;
+  padding: 15px 10px 15px 50px;
+  background-repeat: no-repeat;
+  background-position: 10px center;
+}  
+
+.validation{  
+  color: #D63301;
+  background-color: #FFCCBA;
 }
 
+.success {
+  text-align: center;
+  color: #4F8A10;
+  background-color: #DFF2BF;
+}
+
+.warning {
+  color: #9F6000;
+  background-color: #FEEFB3;
+}

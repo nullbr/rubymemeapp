@@ -1,19 +1,17 @@
-<section class="section about-section gray-bg">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
-    <div class="container">
-        
-        <div class="side-bar">
-            <div class="user-info">
-                <%= image_tag @meme.image_file_name, class: "img-profile img-responsive center-block" %>
-                <ul class="meta list list-unstyled center">
-                    <li class="name"><%= @meme.name %>
-                        <label class="label label-info">Author: <%= @meme.author %></label>
-                    </li>
-                    <li class="activity">Last updated in: <%= day_month(@meme) %></li>
-                </ul>
-            </div>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="container">
+    
+    <div class="side-bar">
+        <div class="user-info">
+            <%= image_tag @meme.image_file_name, class: "img-profile img-responsive center-block" %>
+            <ul class="meta list list-unstyled center">
+                <li class="name"><%= @meme.name %>
+                    <label class="label label-info">Author: <%= @meme.author %></label>
+                </li>
+                <li class="activity">Last updated in: <%= day_month(@meme) %></li>
+            </ul>
         </div>
-
-        <%= render "form", meme: @meme %>
     </div>
-</section>
+
+    <%= render "form", meme: @meme %>
+</div>
