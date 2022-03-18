@@ -1,4 +1,7 @@
 class Meme < ApplicationRecord
+
+    has_many :reviews
+
     validates :name, presence: true, length: {maximum: 15}
     validates :author, format: { with: /\A[a-zA-Z]+\z/,
         message: "only allows letters" }

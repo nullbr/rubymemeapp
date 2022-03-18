@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_15_200331) do
+ActiveRecord::Schema.define(version: 2022_03_18_195615) do
 
   create_table "memes", force: :cascade do |t|
     t.string "name"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 2022_03_15_200331) do
     t.integer "meme_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "stars"
     t.index ["meme_id"], name: "index_reviews_on_meme_id"
   end
 
