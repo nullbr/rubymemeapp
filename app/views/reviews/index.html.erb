@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="row text-center">
+        <h2>Reviews for <%= link_to @meme.name, meme_path(@meme) %></h2>
+    </div>
+    <div class="row">
+        
+        <% @reviews.each do |review| %>
+            <div class="col-lg-4">
+                <div class="blog-grid">
+                    
+                    <div class="blog-info">
+                        <h5>Rating: <%= review.stars %></h5>
+                        <h4>From <%= review.username + " " + review.email %></h4>
+                        <p><%= review.review %></p>
+                        <small> <%= review.created_at %> </small>
+                    </div>
+                </div>
+            </div>
+        <% end %>
+    </div>
+</div>

@@ -12,4 +12,12 @@ module MemesHelper
         end
     end
 
+    def discardpath(meme)
+        if meme.id.nil?
+            root_path
+        else
+            meme_path(meme)
+        end
+    end
+
 end

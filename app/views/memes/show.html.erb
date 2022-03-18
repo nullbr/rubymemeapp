@@ -5,6 +5,7 @@
                 <h3 class="dark-color"><%= @meme.name %></h3>
                 <h4 class="theme-color"><%= day_month(@meme) %> by <%= @meme.author %></h4>
                 <p><%= @meme.description %></p>
+                <span><%= link_to "Reviews", meme_reviews_path(@meme), class: "px-btn-arrow" %></span>
                 <div class="btn-bar">
                     <a class="px-btn theme" href=<%= image_url(@meme.image_file_name) %> download=<%= @meme.name %>>Download</a>
                     <a class="px-btn theme" href=<%= edit_meme_path %>>Edit</a>
