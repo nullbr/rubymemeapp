@@ -9,13 +9,17 @@
                 <div class="blog-grid">
                     
                     <div class="blog-info">
-                        <h5>Rating: <%= review.stars %></h5>
-                        <h4>From <%= review.username + " " + review.email %></h4>
+                        <h5><%= review.stars %> stars</h5>
+                        <h4>From <%= review.username %></h4>
                         <p><%= review.review %></p>
-                        <small> <%= review.created_at %> </small>
+                        <small><%= day_month(review) %></small>
+                        <%= link_to "Edit", edit_meme_review_path(@meme, review), class: "px-btn-arrow" %>
                     </div>
                 </div>
             </div>
         <% end %>
+    </div>
+    <div class="row text-center">
+        <%= link_to "Add a Review", new_meme_review_path, class: "px-btn-arrow" %>
     </div>
 </div>

@@ -1,0 +1,38 @@
+<%= form_with(model: [@meme, @review], local: true) do |r| %>
+    <div class="content-panel">
+        <form class="form-horizontal">
+            
+            <fieldset class="fieldset">
+                <h3 class="fieldset-title">Meme info</h3>
+                <%= render "shared/errors", object: @review %>
+                
+                <div class="form-group">
+                    <%= r.label :username, class: "control-label" %>
+                    <%= r.text_field :username, {class: "form-control"}%>
+                </div>
+
+                <div class="form-group">
+                    <%= r.label :email, class: "control-label" %>
+                    <%= r.email_field :email, {class: "form-control"}%>
+                </div>
+
+                <div class="form-group">
+                    <%= r.label :review, class: "control-label" %>
+                    <%= r.text_field :review, {class: "form-control"}%>
+                </div>
+
+                <div class="form-group">
+                    <%= r.label :stars, class: "control-label" %>
+                    <%= r.select :stars, Review::STARS_OPTIONS,
+                        prompt: "Pick a number" %>
+                </div>
+            </fieldset>
+            
+            <hr>
+            <div class="form-group">
+                <%= r.submit "Submit", {class: "px-btn theme"} %>
+                <%= link_to "Discard Changes", meme_reviews_path(@meme), class: "px-btn theme" %>
+            </div>
+        </form>
+    </div>
+<% end %>
