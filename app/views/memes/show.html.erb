@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <div class="container">
     <div class="row align-items-center justify-content-around flex-row-reverse">
         <div class="col-lg-6">
@@ -5,7 +6,15 @@
                 <h3 class="dark-color"><%= @meme.name %></h3>
                 <h4 class="theme-color"><%= day_month(@meme) %> by <%= @meme.author %></h4>
                 <p><%= @meme.description %></p>
-                <%= link_to "Reviews", meme_reviews_path(@meme), class: "px-btn-arrow" %>
+                <p><%= link_to "Add a Review", new_meme_review_path(@meme), class: "px-btn-arrow" %></p>
+                <% checked_stars(@meme).to_i.times do %>
+                    <span class="fa fa-star checked"></span>
+                <% end %>
+                <% unchecked_stars(@meme).times do %>
+                    <span class="fa fa-star"></span>
+                <% end %>
+                <span><%= link_to "Reviews", meme_reviews_path(@meme), class: "px-btn-arrow" %></span>
+
                 <div class="btn-bar">
                     <a class="px-btn theme" href=<%= image_url(@meme.image_file_name) %> download=<%= @meme.name %>>Download</a>
                     <a class="px-btn theme" href=<%= edit_meme_path %>>Edit</a>
