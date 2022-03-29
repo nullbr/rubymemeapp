@@ -4,6 +4,7 @@ module MemesHelper
   end
 
   def day_month(meme)
+<<<<<<< HEAD
     if meme.blank?
       'no date'
     else
@@ -42,5 +43,12 @@ module MemesHelper
     else
       5 - avg_stars(meme).to_i
     end
+=======
+    meme.blank? ? 'no date' : meme.updated_at.strftime('%d %b %Y')
+  end
+
+  def discardpath(meme)
+    meme.id.nil? ? root_path : meme_path(meme)
+>>>>>>> formatting_files
   end
 end

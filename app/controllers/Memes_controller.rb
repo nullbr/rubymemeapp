@@ -14,7 +14,7 @@ class MemesController < ApplicationController
   def update
     @meme = Meme.find(params[:id])
     if @meme.update(meme_params)
-      redirect_to @meme, notice: "Meme successfuly updated"
+      redirect_to @meme, notice: 'Meme successfuly updated'
     else
       render :edit
     end
@@ -27,7 +27,7 @@ class MemesController < ApplicationController
   def create
     @meme = Meme.create(meme_params)
     if @meme.save
-      redirect_to @meme, notice: "Meme saved successfuly"
+      redirect_to @meme, notice: 'Meme saved successfuly'
     else
       render :new
     end
@@ -36,14 +36,12 @@ class MemesController < ApplicationController
   def destroy
     @meme = Meme.find(params[:id])
     @meme.destroy
-    redirect_to root_path, alert: "Meme deleted successfuly"
+    redirect_to root_path, alert: 'Meme deleted successfuly'
   end
 
-private
+  private
 
   def meme_params
-    params.require(:meme).
-        permit(:name, :description, :author, :image_file_name) 
+    params.require(:meme).permit(:name, :description, :author, :image_file_name)
   end
-
 end

@@ -1,37 +1,37 @@
 <div class="container">
-    <div class="row text-center">
-        <h2>Latest Memes</h2>
-        <h4>Here you will find all the latest Memes from the Ruby World</h4>
-        
-        <div class="btn-bar">
-            <%= link_to "Upload a Meme!", new_meme_path, class: "px-btn-arrow" %>
-        </div>
+  <div class="row text-center">
+    <h2>Latest Memes</h2>
+    <h4>Here you will find all the latest Memes from the Ruby World</h4>
+    
+    <div class="btn-bar">
+      <%= link_to "Upload a Meme!", new_meme_path, class: "px-btn-arrow" %>
     </div>
-    <div class="row">
+  </div>
+  <div class="row">
 
-        <!-- Displays all memes in db from last added to most recent -->
-        
-        <% @memes.each do |meme| %>
-            <div class="col-lg-4">
-                <div class="blog-grid">
-                    <div class="blog-img">
-                        <div class="date"><%= day_month(meme) %></div>
-                        <a href=<%= meme_path(meme.id) %>>
-                            <%= image_tag meme.image_file_name, style: 'height:320px;width:400;', class: "fill" %>
-                        </a>
-                    </div>
-                    <div class="blog-info">
-                        <h5><a href=<%= meme_path(meme.id) %>><%= meme.name %></a></h5>
-                        <p><%= truncate(meme.description, length: 90, separator: '') %></p>
-                        <div class="btn-bar">
-                            <a href=<%= meme_path(meme.id) %> class="px-btn-arrow">
-                                <span>Learn More</span>
-                                <i class="arrow"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+    <!-- Displays all memes in db from last added to most recent -->
+    
+    <% @memes.each do |meme| %>
+      <div class="col-lg-4">
+        <div class="blog-grid">
+          <div class="blog-img">
+            <div class="date"><%= day_month(meme) %></div>
+            <a href=<%= meme_path(meme.id) %>>
+              <%= image_tag meme.image_file_name, style: 'height:320px;width:400;', class: "fill" %>
+            </a>
+          </div>
+          <div class="blog-info">
+            <h5><a href=<%= meme_path(meme.id) %>><%= meme.name %></a></h5>
+            <p><%= truncate(meme.description, length: 90, separator: '') %></p>
+            <div class="btn-bar">
+              <a href=<%= meme_path(meme.id) %> class="px-btn-arrow">
+                <span>Learn More</span>
+                <i class="arrow"></i>
+              </a>
             </div>
-        <% end %>
-    </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>

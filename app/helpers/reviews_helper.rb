@@ -1,9 +1,5 @@
 module ReviewsHelper
-    def day_month(review)
-        if review.blank?
-            "no date"
-        else
-            review.updated_at.strftime("%d %b %Y")
-        end
-    end
+  def day_month(review)
+    review.blank? ? 'no date' : review.updated_at.strftime('%d %b %Y')
+  end
 end

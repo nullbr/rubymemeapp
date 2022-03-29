@@ -8,17 +8,18 @@ Ruby is a member of the Crystal Gems who made her official debut in "Jail Break"
 
 Things you may want to cover:
 
-* Ruby version: 2.6.3
-* Rails version: 6.0.4.6
-* Configuration: 
-    Running server on Vagrant VM Ubuntu 
-    Publishing on heroku: 
-        $ heroku create
-        $ heroku stack
-        $ heroku stack:set heroku-18
-        $ git push heroku main
-* Dependencies: 
-    gem 'pg', '1.1.4' in production group
+- Ruby version: 2.6.3
+- Rails version: 6.0.4.6
+- Configuration:
+  Running server on Vagrant VM Ubuntu
+  Publishing on heroku:
+  $ heroku create
+  $ heroku stack
+  $ heroku stack:set heroku-18
+  $ git push heroku main
+- Dependencies:
+  gem 'pg', '1.1.4' in production group
+
 ### Description
 
 With this app you can:

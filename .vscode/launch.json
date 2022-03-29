@@ -7,8 +7,16 @@
       "request": "launch",
       "cwd": "${workspaceRoot}",
       "program": "${workspaceRoot}/bin/rails",
+<<<<<<< HEAD
       "args": ["server"],
       "showDebuggerOutput": true
     }
   ]
 }
+=======
+      "args": ["server", "-b", "0.0.0.0"],
+      "showDebuggerOutput": true
+    }
+  ]
+}
+>>>>>>> formatting_files
