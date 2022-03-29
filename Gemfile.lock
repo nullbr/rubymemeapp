@@ -82,6 +82,9 @@ GEM
     childprocess (4.1.0)
     concurrent-ruby (1.1.9)
     crass (1.0.6)
+    debase (0.2.4.1)
+      debase-ruby_core_source (>= 0.10.2)
+    debase-ruby_core_source (0.10.14)
     erubi (1.10.0)
     execjs (2.8.1)
     ffi (1.15.5)
@@ -153,6 +156,8 @@ GEM
       ffi (~> 1.0)
     regexp_parser (2.2.1)
     rexml (3.2.5)
+    ruby-debug-ide (0.7.3)
+      rake (>= 0.8.1)
     rubyzip (2.3.2)
     sass-rails (6.0.0)
       sassc-rails (~> 2.1, >= 2.1.1)
@@ -218,11 +223,13 @@ DEPENDENCIES
   bootstrap-will_paginate (= 1.0.0)
   byebug
   capybara (>= 2.15)
+  debase
   jbuilder (~> 2.7)
   listen (~> 3.2)
   pg (= 1.1.4)
   puma
   rails (~> 6.0.4, >= 6.0.4.6)
+  ruby-debug-ide
   sass-rails (>= 6)
   selenium-webdriver
   spring
