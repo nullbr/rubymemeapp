@@ -4,4 +4,7 @@ Rails.application.routes.draw do
   resources :memes do
     resources :reviews
   end
+
+  resources :users
+  get 'signup' => 'users#new'
 end

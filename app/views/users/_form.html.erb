@@ -1,0 +1,42 @@
+<%= form_with(model: user, local: true) do |u| %>
+    <div class="content-panel">
+        <form class="form-horizontal">
+            <fieldset class="fieldset">
+                <h3 class="fieldset-title">User Info</h3>
+                
+                <%= render "shared/errors", object: user %>
+
+                <div class="form-group">
+                    <label class="control-label"><%= u.label :name %></label>
+                    <%= u.text_field :name, {class: "form-control"}%>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label"><%= u.label :email %></label>
+                    <%= u.text_field :email, {class: "form-control"}%>
+                </div>
+                <div class="form-group">
+                    <label class="control-label"><%= u.label :password %></label>
+                    <%= u.password_field :password, {class: "form-control"} %>
+                </div>
+                <div class="form-group">
+                    <label class="control-label"><%= u.label :password_confirmation, "Confirm Password" %></label>
+                    <%= u.password_field :password_confirmation, {class: "form-control"} %>
+                </div>
+            </fieldset>
+            
+            <hr>
+            <div class="form-group">
+                <div class="btn-bar">
+                    <% if user.new_record? %>
+                        <%= u.submit "Create Account", {class: "btn btn-primary"} %>
+                        <%= link_to "Cancel", root_path, class: "btn btn-primary" %>
+                    <% else %>
+                        <%= u.submit "Update Account", {class: "btn btn-primary"} %>
+                        <%= link_to "Cancel", user_path, class: "btn btn-primary" %>
+                    <% end %>
+                </div>
+            </div>
+        </form>
+    </div>    
+<% end %>   
