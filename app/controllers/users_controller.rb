@@ -14,6 +14,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      session[:user_id] = @user.id
       redirect_to @user, notice: 'User successfully created'
     else
       render 'new'
@@ -33,10 +34,11 @@ class UsersController < ApplicationController
     end
   end
 
-	def destroy
+  def destroy
+    session[:user_id] = nil
     @user = User.find(params[:id])
     @user.destroy
-    redirect_to users_url, warning: 'Account was successfully deleted.'
+    redirect_to users_url, alert: 'Account was successfully deleted'
   end
 
   private
