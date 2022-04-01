@@ -1,0 +1,28 @@
+<div class="container">
+    <h1>Sign In</h1>
+    <%= form_with(url: session_path, local: true) do |u| %>
+        <div class="content-panel">
+            <form class="form-horizontal">
+                <fieldset class="fieldset">
+                    <h3 class="fieldset-title">User Info</h3>
+
+                    <div class="form-group">
+                        <label class="control-label"><%= u.label :email %></label>
+                        <%= u.text_field :email, {class: "form-control"}%>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label"><%= u.label :password %></label>
+                        <%= u.password_field :password, {class: "form-control"} %>
+                    </div>
+                </fieldset>
+                
+                <hr>
+                <div class="form-group">
+                    <div class="btn-bar">
+                        <%= u.submit "Sign In", {class: "btn btn-primary"} %>
+                    </div>
+                </div>
+            </form>
+        </div>    
+    <% end %>  
+</div> 
