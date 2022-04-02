@@ -1,11 +1,25 @@
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+<%= render "shared/errors", object: user %>
+
 <%= form_with(model: user, local: true) do |u| %>
     <div class="content-panel">
+        <h2 class="title">Profile<span class="pro-label label label-warning">PRO</span></h2>
         <form class="form-horizontal">
-            <fieldset class="fieldset">
-                <h3 class="fieldset-title">User Info</h3>
-                
-                <%= render "shared/errors", object: user %>
 
+            <fieldset class="fieldset">
+                <h3 class="fieldset-title">Personal Info</h3>
+                <div class="form-group avatar">
+                    <figure class="figure col-md-2 col-sm-3 col-xs-12">
+                        <img class="img-rounded img-responsive" src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="">
+                    </figure>
+                    <div class="form-inline col-md-10 col-sm-9 col-xs-12">
+                        <input type="file" class="file-uploader pull-left">
+                        <button type="submit" class="btn btn-sm btn-default-alt pull-left">Update Image</button>
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset>
                 <div class="form-group">
                     <label class="control-label"><%= u.label :name %></label>
                     <%= u.text_field :name, {class: "form-control"}%>
@@ -15,6 +29,10 @@
                     <label class="control-label"><%= u.label :email %></label>
                     <%= u.text_field :email, {class: "form-control"}%>
                 </div>
+
+            </fieldset>
+            <fieldset class="fieldset">
+                <h3 class="fieldset-title">Password</h3>
                 <div class="form-group">
                     <label class="control-label"><%= u.label :password %></label>
                     <%= u.password_field :password, {class: "form-control"} %>
@@ -24,7 +42,6 @@
                     <%= u.password_field :password_confirmation, {class: "form-control"} %>
                 </div>
             </fieldset>
-            
             <hr>
             <div class="form-group">
                 <div class="btn-bar">
@@ -38,5 +55,5 @@
                 </div>
             </div>
         </form>
-    </div>    
-<% end %>   
+    </div>
+<% end %>  
