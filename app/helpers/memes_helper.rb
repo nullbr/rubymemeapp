@@ -43,8 +43,4 @@ module MemesHelper
       5 - avg_stars(meme).to_i
     end
   end
-
-  def discardpath(meme)
-    meme.id.nil? ? root_path : meme_path(meme)
-  end
 end

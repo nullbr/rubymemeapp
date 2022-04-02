@@ -31,5 +31,13 @@ ActiveRecord::Schema.define(version: 2022_03_18_195615) do
     t.index ['meme_id'], name: 'index_reviews_on_meme_id'
   end
 
-  add_foreign_key 'reviews', 'memes'
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "password_digest"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  add_foreign_key "reviews", "memes"
 end
