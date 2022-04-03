@@ -1,32 +1,30 @@
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 <div class="container">
+    <%= render "shared/errors", object: @user %>
     <div class="view-account">
         <section class="module">
             <div class="module-inner">
                 <div class="side-bar">
                     <div class="user-info">
-                        <img class="img-profile img-circle img-responsive center-block" src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="">
+                        <%= image_tag @user.profile_image, class: "img-profile img-circle img-responsive center-block" %>
                         <ul class="meta list list-unstyled">
-                            <li class="name">Rebecca Sanders
-                                <label class="label label-info">UX Designer</label>
+                            <li class="name"><%= @user.name.capitalize %>
+                                <label class="label label-info"><%= pro_or_memeber(@user) %></label>
                             </li>
-                            <li class="email"><a href="#">Rebecca.S@website.com</a></li>
-                            <li class="activity">Last logged in: Today at 2:18pm</li>
+                            <li class="email"><%= mail_to(@user.email) %></li>
+                            <li class="activity">Memeber since: <%= time_ago_in_words(@user.created_at) %> ago</li>
                         </ul>
                     </div>
             		<nav class="side-menu">
         				<ul class="nav">
         					<li class="active"><a href="#"><span class="fa fa-user"></span> Profile</a></li>
-        					<li><a href="#"><span class="fa fa-cog"></span> Settings</a></li>
-        					<li><a href="#"><span class="fa fa-credit-card"></span> Billing</a></li>
-        					<li><a href="#"><span class="fa fa-envelope"></span> Messages</a></li>
-        					
-        					<li><a href="user-drive.html"><span class="fa fa-th"></span> Drive</a></li>
-        					<li><a href="#"><span class="fa fa-clock-o"></span> Reminders</a></li>
+        					<li><a href="#"><span class="fa fa-envelope"></span> Reviews</a></li>
+        					<li><a href="user-drive.html"><span class="fa fa-th"></span> Memes</a></li>
         				</ul>
         			</nav>
                 </div>
-                <%= render "form", user: @user %>
+
+                <%= render 'form', user: @user %>
             </div>
         </section>
     </div>
