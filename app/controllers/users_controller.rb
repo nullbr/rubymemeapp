@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :require_signin, except: %i[new create]
-  before_action :require_correct_user, only: %i[edit update destroy]
+  before_action :require_correct_user, only: %i[edit update destroy profile]
 
   def index
     @users = User.all
@@ -39,6 +39,8 @@ class UsersController < ApplicationController
     @user.destroy
     redirect_to signup_path, alert: 'Account was successfully deleted'
   end
+
+  def profile; end
 
   private
 
