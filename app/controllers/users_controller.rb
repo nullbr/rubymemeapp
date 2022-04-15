@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :require_signin, except: %i[new create]
+  before_action :require_admin, only: [:index]
   before_action :require_correct_user, only: %i[edit update destroy]
 
   def index
@@ -44,7 +45,7 @@ class UsersController < ApplicationController
 
   def require_correct_user
     @user = User.find(params[:id])
-    redirect_to root_path unless current_user?(@user)
+    redirect_to root_path, alert: 'Unauthorized access!' unless current_user?(@user)
   end
 
   def user_params
