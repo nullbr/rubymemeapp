@@ -1,6 +1,6 @@
 <div class="container">
     <div class="row text-center">
-        <h2>Reviews for <%= link_to @meme.name, meme_path(@meme) %></h2>
+        <h2>Reviews from <%= @object.name %></h2>
     </div>
     <div class="row">
         
@@ -9,17 +9,25 @@
                 <div class="blog-grid">
                     
                     <div class="blog-info">
-                        <h5><%= review.stars %> stars</h5>
+                        <h5><%= review.stars %> stars to <%= get_meme(@object, review).name %></h5>
                         <h4>From <%= review.username %></h4>
                         <p><%= review.review %></p>
                         <small><%= day_month(review) %></small>
-                        <%= link_to "Edit", edit_meme_review_path(@meme, review), class: "px-btn-arrow" %>
+                        <% if current_user?(User.find(review.user_id)) %>
+                            <% if @object.class == Meme %>
+                                <%= link_to "Edit", edit_meme_review_path(review.meme_id, review), class: "px-btn-arrow" %>
+                            <% else %>
+                                <%= link_to "Edit", edit_user_review_path(review.user_id, review), class: "px-btn-arrow" %>
+                            <% end %>
+                        <% end %>
                     </div>
                 </div>
             </div>
         <% end %>
     </div>
     <div class="row text-center">
+    <% if @object.class == Review %>
         <%= link_to "Add a Review", new_meme_review_path, class: "px-btn-arrow" %>
+    <% end %>
     </div>
 </div>

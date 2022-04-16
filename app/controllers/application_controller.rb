@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
   end
 
   def current_user?(user)
-    current_user == user
+    current_user == user || current_user.admin_status
   end
 
   helper_method :current_user?

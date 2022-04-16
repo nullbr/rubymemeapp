@@ -6,51 +6,51 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Meme.create! (
-               [
-                 {
-                   name: 'Happy Ruby',
-                   description:
-                     ' 
-            a happy ruby a happy ruby a happy ruby a happy ruby 
+Meme.create!(
+  [
+    {
+      name: 'Happy Ruby',
+      description:
+        '
+            a happy ruby a happy ruby a happy ruby a happy ruby
             a happy ruby a happy ruby a happy ruby a happy ruby
         '.squish,
-                   author: 'Bruno',
-                   image_file_name:
-                     'https://pm1.narvii.com/6131/81907585d56af524cd827732bba8391851830bb7_hq.jpg'
-                 },
-                 {
-                   name: 'Sad Ruby',
-                   description:
-                     ' 
-            a sad ruby a sad ruby a sad ruby a sad ruby 
+      author: 'Bruno',
+      image_file_name:
+        '1.jpg'
+    },
+    {
+      name: 'Sad Ruby',
+      description:
+        '
+            a sad ruby a sad ruby a sad ruby a sad ruby
             a sad ruby a sad ruby a sad ruby a sad ruby
         '.squish,
-                   author: 'Bruno',
-                   image_file_name:
-                     'https://pm1.narvii.com/6131/81907585d56af524cd827732bba8391851830bb7_hq.jpg'
-                 },
-                 {
-                   name: 'Cool Ruby',
-                   description:
-                     ' 
-            a cool ruby a cool ruby a cool ruby a cool ruby 
+      author: 'Bruno',
+      image_file_name:
+        '2.gif'
+    },
+    {
+      name: 'Cool Ruby',
+      description:
+        '
+            a cool ruby a cool ruby a cool ruby a cool ruby
             a cool ruby a cool ruby a cool ruby a cool ruby
         '.squish,
-                   author: 'Bruno',
-                   image_file_name:
-                     'https://pm1.narvii.com/6131/81907585d56af524cd827732bba8391851830bb7_hq.jpg'
-                 },
-                 {
-                   name: 'Good Ruby',
-                   description:
-                     ' 
-            a good ruby a good ruby a good ruby a good ruby 
+      author: 'Bruno',
+      image_file_name:
+        '3.gif'
+    },
+    {
+      name: 'Good Ruby',
+      description:
+        '
+            a good ruby a good ruby a good ruby a good ruby
             a good ruby a good ruby a good ruby a good ruby
         '.squish,
-                   author: 'Bruno',
-                   image_file_name:
-                     'https://pm1.narvii.com/6131/81907585d56af524cd827732bba8391851830bb7_hq.jpg'
-                 }
-               ]
-             )
+      author: 'Bruno',
+      image_file_name:
+        '4.jpg'
+    }
+  ]
+)

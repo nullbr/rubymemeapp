@@ -1,4 +1,4 @@
-<%= form_with(model: [@meme, @review], local: true) do |r| %>
+<%= form_with(model: [@object, @review], local: true) do |r| %>
     <div class="content-panel">
         <form class="form-horizontal">
             
@@ -8,12 +8,12 @@
                 
                 <div class="form-group">
                     <%= r.label :username, class: "control-label" %>
-                    <%= r.text_field :username, {class: "form-control"}%>
+                    <%= r.text_field :username, value: current_user.name, class: "form-control", disabled: true %>
                 </div>
 
                 <div class="form-group">
                     <%= r.label :email, class: "control-label" %>
-                    <%= r.email_field :email, {class: "form-control"}%>
+                    <%= r.email_field :email, value: current_user.email, class: "form-control", disabled: true %>
                 </div>
 
                 <div class="form-group">
@@ -23,15 +23,14 @@
 
                 <div class="form-group">
                     <%= r.label :stars, class: "control-label" %>
-                    <%= r.select :stars, Review::STARS_OPTIONS,
-                        prompt: "Pick a number" %>
+                    <%= r.select :stars, [1, 2, 3, 4, 5], prompt: "Pick a number" %>
                 </div>
             </fieldset>
             
             <hr>
             <div class="form-group">
-                <%= r.submit "Submit", {class: "px-btn theme"} %>
-                <%= link_to "Discard Changes", meme_reviews_path(@meme), class: "px-btn theme" %>
+                <%= r.submit "Submit", {class: "btn btn-primary"} %>
+                <%= link_to "Discard Changes", :back || meme_reviews_path(@object), class: "btn btn-primary" %>
             </div>
         </form>
     </div>

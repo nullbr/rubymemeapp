@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 2022_04_05_125430) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "stars"
-    t.integer "user_id"
+    t.integer "user_id", null: false
     t.index ["meme_id"], name: "index_reviews_on_meme_id"
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
