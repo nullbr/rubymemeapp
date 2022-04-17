@@ -1,4 +1,7 @@
 class MemesController < ApplicationController
+  before_action :require_signin, except: %i[index show]
+  before_action :require_admin, except: %i[index show new create]
+
   def index
     @memes = Meme.descorder
   end
