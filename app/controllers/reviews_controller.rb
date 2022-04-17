@@ -48,8 +48,8 @@ class ReviewsController < ApplicationController
   end
 
   def review_params
-    defaults = {username: current_user.name, email: current_user.email, user_id: current_user.id }
-    params.require(:review).permit(:username, :email, :review, :stars, :user_id).reverse_merge!(defaults)
+    defaults = {user_id: current_user.id }
+    params.require(:review).permit(:review, :stars, :user_id).reverse_merge!(defaults)
   end
 
   def set_meme_or_user
