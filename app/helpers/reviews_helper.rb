@@ -10,4 +10,8 @@ module ReviewsHelper
       return object
     end
   end
+
+  def get_user(review)
+    User.find(review.user_id)
+  end
 end

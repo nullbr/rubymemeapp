@@ -10,10 +10,10 @@
                     
                     <div class="blog-info">
                         <h5><%= review.stars %> stars to <%= get_meme(@object, review).name %></h5>
-                        <h4>From <%= review.username %></h4>
+                        <h4>From <%= get_user(review).name %></h4>
                         <p><%= review.review %></p>
                         <small><%= day_month(review) %></small>
-                        <% if current_user?(User.find(review.user_id)) %>
+                        <% if current_user?(get_user(review)) %>
                             <% if @object.class == Meme %>
                                 <%= link_to "Edit", edit_meme_review_path(review.meme_id, review), class: "px-btn-arrow" %>
                             <% else %>
