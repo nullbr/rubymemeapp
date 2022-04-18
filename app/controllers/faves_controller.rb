@@ -1,2 +1,0 @@
-class FavesController < ApplicationController
-end

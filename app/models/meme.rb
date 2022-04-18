@@ -1,5 +1,6 @@
 class Meme < ApplicationRecord
   has_many :reviews, dependent: :destroy
+  has_many :likes, dependent: :destroy
 
   validates :name, presence: true, length: { maximum: 15 }
   validates :author,

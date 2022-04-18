@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_05_125430) do
+ActiveRecord::Schema.define(version: 2022_04_18_122431) do
+
+  create_table "likes", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "meme_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["meme_id"], name: "index_likes_on_meme_id"
+    t.index ["user_id"], name: "index_likes_on_user_id"
+  end
 
   create_table "memes", force: :cascade do |t|
     t.string "name"
@@ -44,6 +53,8 @@ ActiveRecord::Schema.define(version: 2022_04_05_125430) do
     t.boolean "admin_status", default: false
   end
 
+  add_foreign_key "likes", "memes"
+  add_foreign_key "likes", "users"
   add_foreign_key "reviews", "memes"
   add_foreign_key "reviews", "users"
 end
