@@ -4,20 +4,20 @@
     </div>
     <div class="row">
         
-        <% @reviews.each do |review| %>
+        <% @reviews.each do |r| %>
             <div class="col-lg-4">
                 <div class="blog-grid">
                     
                     <div class="blog-info">
-                        <h5><%= review.stars %> stars to <%= get_meme(@object, review).name %></h5>
-                        <h4>From <%= get_user(review).name %></h4>
-                        <p><%= review.review %></p>
-                        <small><%= day_month(review) %></small>
-                        <% if current_user?(get_user(review)) %>
+                        <h5><%= r.stars %> stars to <%= get_meme(@object, r).name %></h5>
+                        <h4>From <%= r.user.name %></h4>
+                        <p><%= r.review %></p>
+                        <small><%= day_month(r) %></small>
+                        <% if current_user?(r.user) %>
                             <% if @object.class == Meme %>
-                                <%= link_to "Edit", edit_meme_review_path(review.meme_id, review), class: "px-btn-arrow" %>
+                                <%= link_to "Edit", edit_meme_review_path(r.meme_id, r), class: "px-btn-arrow" %>
                             <% else %>
-                                <%= link_to "Edit", edit_user_review_path(review.user_id, review), class: "px-btn-arrow" %>
+                                <%= link_to "Edit", edit_user_review_path(r.user_id, r), class: "px-btn-arrow" %>
                             <% end %>
                         <% end %>
                     </div>
