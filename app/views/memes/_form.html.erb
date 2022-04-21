@@ -23,7 +23,15 @@
                     <%= m.label :image_file_name, {class: "control-label"} %>
                     <%= m.text_field :image_file_name, {class: "form-control"} %>
                 </div>
-
+                <div class="form-check">
+                    <label class="form-check-label" for="meme_categories">Categories</label>
+                    <%= m.collection_check_boxes(:category_ids, Category.all, :id, :name) do |b| %>
+                        <%= b.label class: "form-check-input" do %>
+                            <%= b.check_box(class: "form-check-input") %> 
+                            <%= b.text %>
+                        <%end%>
+                    <% end %>
+                </div>
             </fieldset>
             
             <hr>

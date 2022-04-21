@@ -9,6 +9,7 @@ class MemesController < ApplicationController
   def show
     @meme = Meme.find(params[:id])
     @likers = @meme.likers
+    @categories = @meme.categories
     if current_user
       @like = current_user.likes.find_by(meme_id: @meme.id)
     end
@@ -49,6 +50,6 @@ class MemesController < ApplicationController
   private
 
   def meme_params
-    params.require(:meme).permit(:name, :description, :author, :image_file_name)
+    params.require(:meme).permit(:name, :description, :author, :image_file_name, category_ids: [])
   end
 end
