@@ -1,3 +1,4 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <div class="container">
     <div class="row align-items-center justify-content-around flex-row-reverse">
@@ -7,7 +8,7 @@
                 <h4 class="theme-color"><%= day_month(@meme) %> by <%= @meme.author %></h4>
                 <p><%= @meme.description %></p>
                 <p><%= link_to "Add a Review", new_meme_review_path(@meme), class: "px-btn-arrow" %></p>
-                <% checked_stars(@meme).to_i.times do %>
+                <% checked_stars(@meme).times do %>
                     <span class="fa fa-star checked"></span>
                 <% end %>
                 <% unchecked_stars(@meme).times do %>
@@ -27,6 +28,11 @@
         <div class="col-lg-5 text-center">
             <div class="about-img">
                 <%= image_tag @meme.image_file_name %>
+                <% if current_user %>
+                    <div class="btn-bar">
+                        <%= like_or_unlike_button(@meme, @like, @likers) %>
+                    </div>
+                <% end %>
             </div>
         </div>
     </div>

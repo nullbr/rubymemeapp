@@ -8,6 +8,10 @@ class MemesController < ApplicationController
 
   def show
     @meme = Meme.find(params[:id])
+    @likers = @meme.likers
+    if current_user
+      @like = current_user.likes.find_by(meme_id: @meme.id)
+    end
   end
 
   def edit

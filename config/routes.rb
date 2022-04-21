@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-  resources :likes
   root 'memes#index'
 
   resources :memes do
     resources :reviews
+    resources :likes, only: [:create, :destroy]
   end
 
   resource :session, only: [:new, :create, :destroy] 
