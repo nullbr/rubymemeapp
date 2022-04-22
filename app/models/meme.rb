@@ -18,9 +18,12 @@ class Meme < ApplicationRecord
               message: 'must be a JPG, PNG or GIF image'
             }
 
-  def self.descorder
-    order('updated_at desc')
-  end
+  # Using lambda ( -> ) to create a callable objects for custom queries
+  scope :descorder, -> { order('updated_at desc') }
+  scope :ascorder, -> { order('updated_at asc') }
+  scope :gif, -> { where("image_file_name like '%.gif'") }
+  scope :png_or_jpg, -> { where("image_file_name not like '%.gif'") }
+  scope :bestmemes, -> {}
 
   def no_review?
     review.blank? || stars.blank?
