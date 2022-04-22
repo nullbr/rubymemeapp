@@ -21,8 +21,8 @@ class Meme < ApplicationRecord
   # Using lambda ( -> ) to create a callable objects for custom queries
   scope :descorder, -> { order('updated_at desc') }
   scope :ascorder, -> { order('updated_at asc') }
-  scope :gif, -> { where("image_file_name like '%.gif'") }
-  scope :png_or_jpg, -> { where("image_file_name not like '%.gif'") }
+  scope :gif, -> { descorder.where("image_file_name like '%.gif'") }
+  scope :png_or_jpg, -> { descorder.where("image_file_name not like '%.gif'") }
   scope :bestmemes, -> {}
 
   def no_review?
