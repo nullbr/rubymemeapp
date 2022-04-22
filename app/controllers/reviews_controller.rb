@@ -56,7 +56,7 @@ class ReviewsController < ApplicationController
     @object = if params[:meme_id].nil?
                 User.find(params[:user_id])
               else
-                Meme.find(params[:meme_id])
+                Meme.find_by!(slug: params[:meme_id])
               end
   end
 end

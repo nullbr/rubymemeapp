@@ -1,4 +1,5 @@
 class MemesController < ApplicationController
+  before_action :set_meme, only: %i[show update edit destroy]
   before_action :require_signin, except: %i[index show]
   before_action :require_admin, except: %i[index show new create]
 
@@ -16,18 +17,14 @@ class MemesController < ApplicationController
   end
 
   def show
-    @meme = Meme.find(params[:id])
     @likers = @meme.likers
     @categories = @meme.categories
     @like = current_user.likes.find_by(meme_id: @meme.id) if current_user
   end
 
-  def edit
-    @meme = Meme.find(params[:id])
-  end
+  def edit; end
 
   def update
-    @meme = Meme.find(params[:id])
     if @meme.update(meme_params)
       redirect_to @meme, notice: 'Meme successfuly updated'
     else
@@ -49,12 +46,15 @@ class MemesController < ApplicationController
   end
 
   def destroy
-    @meme = Meme.find(params[:id])
     @meme.destroy
     redirect_to root_path, alert: 'Meme deleted successfuly'
   end
 
   private
+
+  def set_meme
+    @meme = Meme.find_by!(slug: params[:id])
+  end
 
   def meme_params
     params.require(:meme).permit(:name, :description, :author, :image_file_name, category_ids: [])

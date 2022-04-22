@@ -16,15 +16,15 @@
         <div class="blog-grid">
           <div class="blog-img">
             <div class="date"><%= day_month(meme) %></div>
-            <a href=<%= meme_path(meme.id) %>>
+            <a href=<%= meme_path(meme) %>>
               <%= image_tag meme.image_file_name, style: 'height:320px;width:400;', class: "fill" %>
             </a>
           </div>
           <div class="blog-info">
-            <h5><a href=<%= meme_path(meme.id) %>><%= meme.name %></a></h5>
+            <h5><a href=<%= meme_path(meme) %>><%= meme.name %></a></h5>
             <p><%= truncate(meme.description, length: 90, separator: '') %></p>
             <div class="btn-bar">
-              <a href=<%= meme_path(meme.id) %> class="px-btn-arrow">
+              <a href=<%= meme_path(meme) %> class="px-btn-arrow">
                 <span>Learn More</span>
                 <i class="arrow"></i>
               </a>
