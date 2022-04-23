@@ -1,6 +1,8 @@
 class Meme < ApplicationRecord
   before_save :set_slug
 
+  belongs_to :user
+
   has_many :reviews, dependent: :destroy
   has_many :likes, dependent: :destroy
   has_many :likers, through: :likes, source: :user
@@ -8,11 +10,6 @@ class Meme < ApplicationRecord
   has_many :categories, through: :categorizations
 
   validates :name, presence: true, uniqueness: true, length: { maximum: 25 }
-  validates :author,
-            format: {
-              with: /\A[a-zA-Z]+\z/,
-              message: 'only allows letters'
-            }
   validates :description, length: { minimum: 25, maximum: 500 }
   validates :image_file_name,
             format: {

@@ -38,6 +38,7 @@ class MemesController < ApplicationController
 
   def create
     @meme = Meme.create(meme_params)
+    @meme.user = current_user
     if @meme.save
       redirect_to @meme, notice: 'Meme saved successfuly'
     else
@@ -57,6 +58,6 @@ class MemesController < ApplicationController
   end
 
   def meme_params
-    params.require(:meme).permit(:name, :description, :author, :image_file_name, category_ids: [])
+    params.require(:meme).permit(:name, :description, :image_file_name, category_ids: [])
   end
 end

@@ -4,7 +4,7 @@
         <div class="col-lg-6">
             <div class="about-text">
                 <h3 class="dark-color"><%= @meme.name %></h3>
-                <h4 class="theme-color"><%= day_month(@meme) %> by <%= @meme.author %></h4>
+                <h4 class="theme-color"><%= day_month(@meme) %> by <%= @meme.user.name %></h4>
                 <p><%= @meme.description %></p>
                 <p><%= link_to "Add a Review", new_meme_review_path(@meme), class: "px-btn-arrow" %></p>
                 <% checked_stars(@meme).times do %>

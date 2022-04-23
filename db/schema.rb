@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_22_164732) do
+ActiveRecord::Schema.define(version: 2022_04_23_023540) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
@@ -39,11 +39,11 @@ ActiveRecord::Schema.define(version: 2022_04_22_164732) do
   create_table "memes", force: :cascade do |t|
     t.string "name"
     t.string "description"
-    t.string "author"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "image_file_name", default: "rubylogo.png"
     t.string "slug"
+    t.integer "user_id"
   end
 
   create_table "reviews", force: :cascade do |t|

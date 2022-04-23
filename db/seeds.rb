@@ -6,6 +6,18 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+User.create!(
+  [
+    {
+      name: 'Bruno',
+      email: 'bruno@bruno.com',
+      admin_status: true,
+      password: '1234'
+    }
+  ]
+) unless User.find_by(email: 'bruno@bruno.com')
+
+user = User.find_by(email: 'bruno@bruno.com')
 Meme.create!(
   [
     {
@@ -15,7 +27,7 @@ Meme.create!(
             a happy ruby a happy ruby a happy ruby a happy ruby
             a happy ruby a happy ruby a happy ruby a happy ruby
         '.squish,
-      author: 'Bruno',
+      user_id: user.id,
       image_file_name:
         '1.jpg'
     },
@@ -26,7 +38,7 @@ Meme.create!(
             a sad ruby a sad ruby a sad ruby a sad ruby
             a sad ruby a sad ruby a sad ruby a sad ruby
         '.squish,
-      author: 'Bruno',
+      user_id: user.id,
       image_file_name:
         '2.gif'
     },
@@ -37,7 +49,7 @@ Meme.create!(
             a cool ruby a cool ruby a cool ruby a cool ruby
             a cool ruby a cool ruby a cool ruby a cool ruby
         '.squish,
-      author: 'Bruno',
+      user_id: user.id,
       image_file_name:
         '3.gif'
     },
@@ -48,7 +60,7 @@ Meme.create!(
             a good ruby a good ruby a good ruby a good ruby
             a good ruby a good ruby a good ruby a good ruby
         '.squish,
-      author: 'Bruno',
+      user_id: user.id,
       image_file_name:
         '4.jpg'
     }
