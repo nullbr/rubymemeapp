@@ -1,0 +1,31 @@
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="container">
+    <%= render "shared/errors", object: @user %>
+    <div class="view-account">
+        <section class="module">
+            <div class="module-inner">
+                <div class="side-bar">
+                    <div class="user-info">
+                        <%= image_tag @user.profile_image, class: "img-profile img-circle img-responsive center-block" %>
+                        <ul class="meta list list-unstyled">
+                            <li class="name"><%= @user.name.capitalize %>
+                                <label class="label label-info"><%= pro_or_memeber(@user) %></label>
+                            </li>
+                            <li class="email"><%= mail_to(@user.email) %></li>
+                            <li class="activity">Memeber since: <%= time_ago_in_words(@user.created_at) %> ago</li>
+                        </ul>
+                    </div>
+            		<nav class="side-menu">
+        				<ul class="nav">
+        					<li class="active"><a href="#"><span class="fa fa-user"></span> Profile</a></li>
+        					<li><a href="#"><span class="fa fa-envelope"></span> Reviews</a></li>
+        					<li><a href="user-drive.html"><span class="fa fa-th"></span> Memes</a></li>
+        				</ul>
+        			</nav>
+                </div>
+
+                <%= render 'form', user: @user %>
+            </div>
+        </section>
+    </div>
+</div>
