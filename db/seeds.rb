@@ -66,3 +66,12 @@ Meme.create!(
     }
   ]
 )
+
+Category.create!(
+  [
+    {name: 'Funny'},
+    {name: 'Cool'},
+    {name: 'Sad'},
+    {name: 'Art'}
+  ]
+)

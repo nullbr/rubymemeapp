@@ -16,7 +16,7 @@
                 <span><%= link_to "Reviews", meme_reviews_path(@meme), class: "px-btn-arrow" %></span>
 
                 <div class="btn-bar">
-                    <a class="px-btn theme" href=<%= image_url(@meme.image_file_name) %> download=<%= @meme.name %>>Download</a>
+                    <a class="px-btn theme" href=<%= image_url(@meme.image_file_name) %> download=<%= @meme.slug %>>Download</a>
                     <% if current_user_admin? %>
                         <a class="px-btn theme" href=<%= edit_meme_path %>>Edit</a>
                         <%= link_to "Delete", @meme, method: :delete, data: { confirm: "Are you sure you want to delete this item?" }, class: "px-btn theme" %>
@@ -24,9 +24,11 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-5 text-center">
+        <div class="col-lg-6 text-center">
             <div class="about-img">
-                <%= image_tag @meme.image_file_name %>
+                <%= image_tag @meme.image_file_name, style: 'max-width:520px;' %>
+            </div>
+            <div>
                 <% if @categories.present? %>
                     <% @categories.each do |category| %>
                         <%= category.name %>

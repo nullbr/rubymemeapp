@@ -4,7 +4,9 @@
     <h4>Here you will find all the latest Memes from the Ruby World</h4>
     
     <div class="btn-bar">
-      <%= link_to "Upload a Meme!", new_meme_path, class: "px-btn-arrow" %>
+      <%= link_to new_meme_path, class: "px-btn-arrow" do %>
+        Upload a Meme!<i class="arrow"></i>
+      <% end %>
     </div>
   </div>
   <div class="row">
@@ -17,7 +19,7 @@
           <div class="blog-img">
             <div class="date"><%= day_month(meme) %></div>
             <a href=<%= meme_path(meme) %>>
-              <%= image_tag meme.image_file_name, style: 'height:320px;width:400;', class: "fill" %>
+              <%= image_tag meme.image_file_name, style: 'height:320px;width:320px;' %>
             </a>
           </div>
           <div class="blog-info">

@@ -11,7 +11,7 @@ class LikesController < ApplicationController
     like = current_user.likes.find(params[:id])
     like.destroy
 
-    meme = Meme.find_by!(slug: params[:id])
+    meme = Meme.find_by!(slug: params[:meme_id])
     redirect_to meme
   end
 end
