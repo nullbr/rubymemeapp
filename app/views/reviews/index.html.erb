@@ -2,25 +2,22 @@
     <div class="row text-center">
         <h2>Reviews from <%= @object.name %></h2>
     </div>
-    <div class="row">
+    <div class="row" style="padding-bottom: 10px">
         
         <% @reviews.each do |r| %>
-            <div class="col-lg-4">
-                <div class="blog-grid">
-                    
-                    <div class="blog-info">
-                        <h5><%= r.stars %> stars to <%= get_meme(@object, r).name %></h5>
-                        <h4>From <%= r.user.name %></h4>
-                        <p><%= r.review %></p>
-                        <small><%= day_month(r) %></small>
-                        <% if current_user?(r.user) %>
-                            <% if @object.class == Meme %>
-                                <%= link_to "Edit", edit_meme_review_path(r.meme_id, r), class: "px-btn-arrow" %>
-                            <% else %>
-                                <%= link_to "Edit", edit_user_review_path(r.user_id, r), class: "px-btn-arrow" %>
-                            <% end %>
+            <div class="blog-grid">
+                <div class="blog-info">
+                    <h5><%= r.stars %> stars to <%= get_meme(@object, r).name %></h5>
+                    <h4>From <%= r.user.name %></h4>
+                    <p><%= r.review %></p>
+                    <small><%= day_month(r) %></small>
+                    <% if current_user?(r.user) %>
+                        <% if @object.class == Meme %>
+                            <%= link_to "Edit", edit_meme_review_path(r.meme_id, r), class: "px-btn-arrow" %>
+                        <% else %>
+                            <%= link_to "Edit", edit_user_review_path(r.user_id, r), class: "px-btn-arrow" %>
                         <% end %>
-                    </div>
+                    <% end %>
                 </div>
             </div>
         <% end %>

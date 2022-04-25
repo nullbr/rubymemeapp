@@ -1,5 +1,5 @@
 <div class="content-panel">
-    <h2 class="title">Uploaded Memes <span class="pro-label label label-warning">
+    <h2 class="title">Liked Memes <span class="pro-label label label-warning">
     <% if user.admin_status == true %>
         PRO
     <% else %>
@@ -9,7 +9,7 @@
     <fieldset class="fieldset">
         <h3 class="fieldset-title">Memes</h3>
     </fieldset>
-    <% user.memes.each do |meme| %>
+    <% user.liked_memes.each do |meme| %>
         <fieldset class="fieldset">
             <div class="blog-grid">
                 <div class="blog-img">
@@ -22,7 +22,10 @@
                     <h5><a href=<%= meme_path(meme) %>><%= meme.name %></a></h5>
                     <p><%= truncate(meme.description, length: 90, separator: '') %></p>
                     <div class="btn-bar">
-                        <span><%= link_to "Edit", edit_meme_path(meme), class: "px-btn-arrow" %></span>
+                    <a href=<%= meme_path(meme) %> class="px-btn-arrow">
+                        <span>Learn More</span>
+                        <i class="arrow"></i>
+                    </a>
                     </div>
                 </div>
             </div>

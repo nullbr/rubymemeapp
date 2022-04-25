@@ -17,22 +17,27 @@
                     </div>
             		<nav class="side-menu">
         				<ul class="nav">
-                            <li><%= link_to edit_user_path(@user), class: "active" do %>
+                            <li class="<%= 'active' if which_page == 'profile' %>"><%= link_to edit_user_path(@user) do %>
                                 <span class="fa fa-user"></span> Profile
                             <% end %></li>
-                            <li><%= link_to user_resource_pages_path(@user, 'reviews'), class: "active" do %>
-                                <span class="fa fa-envelope"></span> Reviews
-                            <% end %></li>
-                            <li><%= link_to user_resource_pages_path(@user, 'memes'), class: "active" do %>
+                            <li class="<%= 'active' if which_page == 'memes' %>"><%= link_to user_resource_pages_path(@user, 'memes') do %>
                                 <span class="fa fa-th"></span> Memes
+                            <% end %></li>
+                            <li class="<%= 'active' if which_page == 'reviews' %>"><%= link_to user_resource_pages_path(@user, 'reviews') do %>
+                                <span class="fa fa-star-half-o" aria-hidden="true"></span> Reviews
+                            <% end %></li>
+                            <li class="<%= 'active' if which_page == 'likes' %>"><%= link_to user_resource_pages_path(@user, 'likes') do %>
+                                <span class="fa fa-thumbs-o-up" aria-hidden="true"></span> Likes
                             <% end %></li>
         				</ul>
         			</nav>
                 </div>
-                <% if params[:page] == 'reviews' %>
+                <% if which_page == 'reviews' %>
                     <%= render 'reviews', user: @user %>
-                <% elsif params[:page] == 'memes' %>
+                <% elsif which_page == 'memes' %>
                     <%= render 'memes', user: @user %>
+                <% elsif which_page == 'likes' %>
+                    <%= render 'likes', user: @user %>
                 <% else %>
                     <%= render 'form', user: @user %>
                 <% end %>

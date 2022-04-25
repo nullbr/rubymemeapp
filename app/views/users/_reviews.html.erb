@@ -6,7 +6,20 @@
         MEMEBER
     <% end %>
     </span></h2>
-    <% user.reviews.each do |review| %>
-        <p><%= review.review %></p>
+    <fieldset class="fieldset">
+        <h3 class="fieldset-title">Reviews</h3>
+    </fieldset>
+    <% user.reviews.each do |r| %>
+        <fieldset class="fieldset" style="padding-top: 10px">
+            <div class="blog-grid">
+                <div class="blog-info">
+                    <h5><%= r.stars %> stars to <%= get_meme(@object, r).name %></h5>
+                    <h4>From <%= r.user.name %></h4>
+                    <p><%= r.review %></p>
+                    <small><%= day_month(r) %></small>
+                    <%= link_to "Edit", edit_meme_review_path(r.meme.slug, r), class: "px-btn-arrow" %>
+                </div>
+            </div>
+        </fieldset>
     <% end %>
 </div>
