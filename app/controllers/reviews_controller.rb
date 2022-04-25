@@ -14,7 +14,7 @@ class ReviewsController < ApplicationController
   def update
     @review = @object.reviews.find(params[:id])
     if @review.update(review_params)
-      redirect_to meme_reviews_path(@meme), notice: 'Review updated successfuly'
+      redirect_to meme_reviews_path(@object), notice: 'Review updated successfuly'
     else
       render :edit
     end

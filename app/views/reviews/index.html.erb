@@ -1,3 +1,4 @@
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 <div class="container">
     <div class="row text-center">
         <h2>Reviews from <%= @object.name %></h2>
@@ -7,15 +8,20 @@
         <% @reviews.each do |r| %>
             <div class="blog-grid">
                 <div class="blog-info">
-                    <h5><%= r.stars %> stars to <%= get_meme(@object, r).name %></h5>
+                    <% r.stars.to_i.times do %>
+                        <span class="fa fa-star checked"></span>
+                    <% end %>
+                    <% (5 - r.stars.to_i).times do %>
+                        <span class="fa fa-star"></span>
+                    <% end %>
                     <h4>From <%= r.user.name %></h4>
                     <p><%= r.review %></p>
                     <small><%= day_month(r) %></small>
                     <% if current_user?(r.user) %>
                         <% if @object.class == Meme %>
-                            <%= link_to "Edit", edit_meme_review_path(r.meme_id, r), class: "px-btn-arrow" %>
+                            <%= link_to "Edit", edit_meme_review_path(r.meme, r), class: "px-btn-arrow" %>
                         <% else %>
-                            <%= link_to "Edit", edit_user_review_path(r.user_id, r), class: "px-btn-arrow" %>
+                            <%= link_to "Edit", edit_user_review_path(r.user, r), class: "px-btn-arrow" %>
                         <% end %>
                     <% end %>
                 </div>

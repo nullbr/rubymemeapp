@@ -7,13 +7,18 @@
     <% end %>
     </span></h2>
     <fieldset class="fieldset">
-        <h3 class="fieldset-title">Reviews</h3>
+        <h3 class="fieldset-title"><%= pluralize(user.reviews.size, 'Review') %></h3>
     </fieldset>
     <% user.reviews.each do |r| %>
         <fieldset class="fieldset" style="padding-top: 10px">
             <div class="blog-grid">
                 <div class="blog-info">
-                    <h5><%= r.stars %> stars to <%= get_meme(@object, r).name %></h5>
+                    <% r.stars.to_i.times do %>
+                        <span class="fa fa-star checked"></span>
+                    <% end %>
+                    <% (5 - r.stars.to_i).times do %>
+                        <span class="fa fa-star"></span>
+                    <% end %>
                     <h4>From <%= r.user.name %></h4>
                     <p><%= r.review %></p>
                     <small><%= day_month(r) %></small>

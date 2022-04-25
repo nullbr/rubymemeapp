@@ -27,20 +27,4 @@ module MemesHelper
 
     sum / meme.reviews.size
 	end
-
-  def checked_stars(meme)
-    if meme.reviews.size.zero?
-      0
-    else
-      avg_stars(meme).to_i
-    end
-  end
-
-  def unchecked_stars(meme)
-    if meme.reviews.size.zero?
-      0
-    else
-      5 - avg_stars(meme).to_i
-    end
-  end
 end

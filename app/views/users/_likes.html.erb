@@ -7,7 +7,7 @@
     <% end %>
     </span></h2>
     <fieldset class="fieldset">
-        <h3 class="fieldset-title">Memes</h3>
+        <h3 class="fieldset-title"><%= pluralize(user.liked_memes.size, 'Meme')%></h3>
     </fieldset>
     <% user.liked_memes.each do |meme| %>
         <fieldset class="fieldset">
