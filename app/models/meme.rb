@@ -9,21 +9,30 @@ class Meme < ApplicationRecord
   has_many :categorizations, dependent: :destroy
   has_many :categories, through: :categorizations
 
+  has_one_attached :meme_image
+
+  validate :acceptable_image
+
+  validates :meme_image, presence: true
   validates :name, presence: true, uniqueness: true, length: { maximum: 25 }
   validates :description, length: { minimum: 25, maximum: 500 }
-  validates :image_file_name,
-            format: {
-              with: /\w+\.(jpg|gif|png)\z/i,
-              message: 'must be a JPG, PNG or GIF image'
-            }
 
   # Using lambda ( -> ) to create a callable objects for custom queries
   scope :descorder, -> { order('updated_at desc') }
   scope :ascorder, -> { order('updated_at asc') }
-  scope :gif, -> { descorder.where("image_file_name like '%.gif'") }
-  scope :png_or_jpg, -> { descorder.where("image_file_name not like '%.gif'") }
+  scope :gif, -> { descorder.where("meme_image like '%.gif'") }
+  scope :png_or_jpg, -> { descorder.where("meme_image not like '%.gif'") }
   scope :bestmemes, -> {}
 
+  def acceptable_image
+    return unless meme_image.attached?
+
+    errors.add(:meme_image, 'is too big') unless meme_image.byte_size <= 2.megabyte
+
+    acceptable_types = ["image/jpeg", "image/png", "image/gif"]
+    errors.add(:meme_image, 'must be JPEG, PNG or GIF') unless acceptable_types.include?(meme_image.content_type)
+  end
+  
   def no_review?
     review.blank? || stars.blank?
   end
