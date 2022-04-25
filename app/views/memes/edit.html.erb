@@ -6,7 +6,7 @@
             <%= image_tag @meme.image_file_name, class: "img-profile img-responsive center-block" %>
             <ul class="meta list list-unstyled center">
                 <li class="name"><%= @meme.name %>
-                    <label class="label label-info">Author: <%= @meme.author %></label>
+                    <label class="label label-info">Author: <%= @meme.user.name %></label>
                 </li>
                 <li class="activity">Last updated in: <%= day_month(@meme) %></li>
             </ul>

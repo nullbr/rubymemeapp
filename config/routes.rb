@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   resource :session, only: [:new, :create, :destroy] 
 
   resources :users do
-    resources :reviews, only: [:index, :edit, :destroy]
+    get 'edit/:page' => 'users#edit', as: :resource_pages
   end
   get 'signup' => 'users#new'
 end

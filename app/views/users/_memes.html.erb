@@ -1,0 +1,28 @@
+<div class="content-panel">
+    <h2 class="title">Reviews <span class="pro-label label label-warning">
+    <% if user.admin_status == true %>
+        PRO
+    <% else %>
+        MEMEBER
+    <% end %>
+    </span></h2>
+    <% user.memes.each do |meme| %>
+        <p><%= meme.name %></p>
+        <div class="col-lg-6 text-center">
+            <div class="about-img">
+                <%= image_tag meme.image_file_name, style: 'max-width:520px;' %>
+            </div>
+            <div>
+                <% if meme.categories.present? %>
+                    <% meme.categories.each do |category| %>
+                        <%= category.name %>
+                        <%= " | " unless category == meme.categories.last %>
+                    <% end %>
+                <% end %>
+            </div>
+            <div>
+                <%= pluralize(meme.likers.size, 'Like').to_s %>
+            </div>
+        </div>
+    <% end %>
+</div>

@@ -17,14 +17,25 @@
                     </div>
             		<nav class="side-menu">
         				<ul class="nav">
-        					<li class="active"><a href="#"><span class="fa fa-user"></span> Profile</a></li>
-        					<li><a href="#"><span class="fa fa-envelope"></span> Reviews</a></li>
-        					<li><a href="user-drive.html"><span class="fa fa-th"></span> Memes</a></li>
+                            <li><%= link_to edit_user_path(@user), class: "active" do %>
+                                <span class="fa fa-user"></span> Profile
+                            <% end %></li>
+                            <li><%= link_to user_resource_pages_path(@user, 'reviews'), class: "active" do %>
+                                <span class="fa fa-envelope"></span> Reviews
+                            <% end %></li>
+                            <li><%= link_to user_resource_pages_path(@user, 'memes'), class: "active" do %>
+                                <span class="fa fa-th"></span> Memes
+                            <% end %></li>
         				</ul>
         			</nav>
                 </div>
-
-                <%= render 'form', user: @user %>
+                <% if params[:page] == 'reviews' %>
+                    <%= render 'reviews', user: @user %>
+                <% elsif params[:page] == 'memes' %>
+                    <%= render 'memes', user: @user %>
+                <% else %>
+                    <%= render 'form', user: @user %>
+                <% end %>
             </div>
         </section>
     </div>

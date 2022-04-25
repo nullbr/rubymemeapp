@@ -1,0 +1,12 @@
+<div class="content-panel">
+    <h2 class="title">Reviews <span class="pro-label label label-warning">
+    <% if user.admin_status == true %>
+        PRO
+    <% else %>
+        MEMEBER
+    <% end %>
+    </span></h2>
+    <% user.reviews.each do |review| %>
+        <p><%= review.review %></p>
+    <% end %>
+</div>

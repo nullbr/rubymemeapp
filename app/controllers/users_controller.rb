@@ -44,7 +44,7 @@ class UsersController < ApplicationController
   private
 
   def require_correct_user
-    @user = User.find(params[:id])
+    @user = User.find(params[:id] || params[:user_id])
     redirect_to root_path, alert: 'Unauthorized access!' unless current_user?(@user)
   end
 
