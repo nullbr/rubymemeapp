@@ -30,4 +30,12 @@ module ReviewsHelper
       5 - avg_stars(meme).to_i
     end
   end
+
+  def user_not_reviewed?(meme)
+    if current_user.reviews.where(meme_id: meme.id).present?
+      false
+    else
+      true
+    end
+  end
 end

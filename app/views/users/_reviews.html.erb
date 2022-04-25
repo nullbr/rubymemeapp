@@ -19,7 +19,7 @@
                     <% (5 - r.stars.to_i).times do %>
                         <span class="fa fa-star"></span>
                     <% end %>
-                    <h4>From <%= r.user.name %></h4>
+                    <h4>For <%= link_to r.meme.name, meme_path(r.meme) %></h4>
                     <p><%= r.review %></p>
                     <small><%= day_month(r) %></small>
                     <%= link_to "Edit", edit_meme_review_path(r.meme.slug, r), class: "px-btn-arrow" %>
