@@ -3,29 +3,31 @@
     <div class="row text-center">
         <h2>Reviews from <%= @object.name %></h2>
     </div>
-    <div class="row" style="padding-bottom: 10px">
+    <div class="row">
         
         <% @reviews.each do |r| %>
-            <div class="blog-grid">
-                <div class="blog-info">
-                    <% r.stars.to_i.times do %>
-                        <span class="fa fa-star checked"></span>
-                    <% end %>
-                    <% (5 - r.stars.to_i).times do %>
-                        <span class="fa fa-star"></span>
-                    <% end %>
-                    <h4>From <%= r.user.name %></h4>
-                    <p><%= r.review %></p>
-                    <small><%= day_month(r) %></small>
-                    <% if current_user?(r.user) %>
-                        <% if @object.class == Meme %>
-                            <%= link_to "Edit", edit_meme_review_path(r.meme, r), class: "px-btn-arrow" %>
-                        <% else %>
-                            <%= link_to "Edit", edit_user_review_path(r.user, r), class: "px-btn-arrow" %>
+            <fieldset class="fieldset" style="padding-top: 10px">
+                <div class="blog-grid">
+                    <div class="blog-info">
+                        <% r.stars.to_i.times do %>
+                            <span class="fa fa-star checked"></span>
                         <% end %>
-                    <% end %>
+                        <% (5 - r.stars.to_i).times do %>
+                            <span class="fa fa-star"></span>
+                        <% end %>
+                        <h4>From <%= r.user.name %></h4>
+                        <p><%= r.review %></p>
+                        <small><%= day_month(r) %></small>
+                        <% if current_user?(r.user) %>
+                            <% if @object.class == Meme %>
+                                <%= link_to "Edit", edit_meme_review_path(r.meme, r), class: "px-btn-arrow" %>
+                            <% else %>
+                                <%= link_to "Edit", edit_user_review_path(r.user, r), class: "px-btn-arrow" %>
+                            <% end %>
+                        <% end %>
+                    </div>
                 </div>
-            </div>
+            </fieldset>
         <% end %>
     </div>
     <div class="row text-center">
