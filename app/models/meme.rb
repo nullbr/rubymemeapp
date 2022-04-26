@@ -1,5 +1,5 @@
 class Meme < ApplicationRecord
-  before_save :set_slug
+  before_save :set_slug, :set_image_content_type
 
   belongs_to :user
 
@@ -20,8 +20,8 @@ class Meme < ApplicationRecord
   # Using lambda ( -> ) to create a callable objects for custom queries
   scope :descorder, -> { order('updated_at desc') }
   scope :ascorder, -> { order('updated_at asc') }
-  scope :gif, -> { descorder.where("meme_image like '%.gif'") }
-  scope :png_or_jpg, -> { descorder.where("meme_image not like '%.gif'") }
+  scope :gif, -> { descorder.where("image_content_type like 'image/gif'") }
+  scope :png_or_jpg, -> { descorder.where("image_content_type not like 'image/gif'") }
   scope :bestmemes, -> {}
 
   def acceptable_image
@@ -45,5 +45,9 @@ class Meme < ApplicationRecord
 
   def set_slug
     self.slug = name.parameterize
+  end
+
+  def set_image_content_type
+    self.image_content_type = meme_image.content_type
   end
 end
