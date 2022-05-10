@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.7.3'
+ruby '2.7.6'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 7.0.0'
@@ -20,6 +20,9 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+# https://stackoverflow.com/questions/67773514/getting-warning-already-initialized-constant-on-assets-precompile-at-the-time
+gem 'net-http'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
@@ -33,16 +36,16 @@ gem 'bootstrap-sass', '3.4.1'
 gem 'bootstrap-will_paginate', '1.0.0'
 
 # Add sprockets to the gem file as it's now an optional depedency with rails 7.
-gem "sprockets-rails"
+gem 'sprockets-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
 
   # Use sqlite3 as the database for Active Record
-  gem 'sqlite3', '~> 1.4'
-  gem 'ruby-debug-ide'
   gem 'debase'
+  gem 'ruby-debug-ide'
+  gem 'sqlite3', '~> 1.4'
 end
 
 group :development do

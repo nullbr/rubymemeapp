@@ -1,0 +1,13 @@
+# git files
+.git
+.gitignore
+
+# logs
+log/*
+
+# temp files
+tmp/*
+
+# editor temp files
+*.swp
+*.swo

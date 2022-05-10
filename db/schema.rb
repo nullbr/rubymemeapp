@@ -74,13 +74,16 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_09_193648) do
   end
 
   create_table "reviews", force: :cascade do |t|
+    t.string "username"
+    t.string "email"
     t.text "review"
     t.integer "meme_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "stars"
-    t.integer "user_id"
+    t.integer "user_id", null: false
     t.index ["meme_id"], name: "index_reviews_on_meme_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -100,4 +103,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_09_193648) do
   add_foreign_key "likes", "memes"
   add_foreign_key "likes", "users"
   add_foreign_key "reviews", "memes"
+  add_foreign_key "reviews", "users"
 end
