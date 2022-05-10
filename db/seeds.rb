@@ -28,7 +28,7 @@ Meme.create!(
             a happy ruby a happy ruby a happy ruby a happy ruby
         '.squish,
       user_id: user.id,
-      image_file_name:
+      meme_image:
         '1.jpg'
     },
     {
@@ -39,7 +39,7 @@ Meme.create!(
             a sad ruby a sad ruby a sad ruby a sad ruby
         '.squish,
       user_id: user.id,
-      image_file_name:
+      meme_image:
         '2.gif'
     },
     {
@@ -50,7 +50,7 @@ Meme.create!(
             a cool ruby a cool ruby a cool ruby a cool ruby
         '.squish,
       user_id: user.id,
-      image_file_name:
+      meme_image:
         '3.gif'
     },
     {
@@ -61,7 +61,7 @@ Meme.create!(
             a good ruby a good ruby a good ruby a good ruby
         '.squish,
       user_id: user.id,
-      image_file_name:
+      meme_image:
         '4.jpg'
     }
   ]
