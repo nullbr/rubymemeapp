@@ -45,3 +45,8 @@ yarn-debug.log*
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
+yarn.lock
+
+# ignoring serure .env files
+/.env/development/web
+/.env/development/database

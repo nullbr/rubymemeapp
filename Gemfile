@@ -38,14 +38,17 @@ gem 'bootstrap-will_paginate', '1.0.0'
 # Add sprockets to the gem file as it's now an optional depedency with rails 7.
 gem 'sprockets-rails'
 
+# use postgres as database 
+gem 'pg', '~> 1.0'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
 
   # Use sqlite3 as the database for Active Record
+  # gem 'sqlite3', '~> 1.4'
   gem 'debase'
   gem 'ruby-debug-ide'
-  gem 'sqlite3', '~> 1.4'
 end
 
 group :development do
@@ -67,9 +70,8 @@ group :test do
   gem 'webdrivers'
 end
 
-group :production do
-  gem 'pg', '1.1.4'
-end
+# group :production do
+# end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]

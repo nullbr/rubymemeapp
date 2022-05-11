@@ -291,7 +291,7 @@ DEPENDENCIES
   jbuilder (~> 2.7)
   listen (~> 3.2)
   net-http
-  pg (= 1.1.4)
+  pg (~> 1.0)
   prettier
   puma
   rails (~> 7.0.0)
