@@ -1,4 +1,4 @@
-![Screenshot from 2022-03-10 14-50-34](https://user-images.githubusercontent.com/94543524/157724548-3da9e036-949c-4a62-9681-0cebf1de5d53.png)
+![Home Page](https://user-images.githubusercontent.com/94543524/157724548-3da9e036-949c-4a62-9681-0cebf1de5d53.png)
 
 https://rubymemeapp.herokuapp.com/
 
