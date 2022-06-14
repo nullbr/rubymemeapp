@@ -2,29 +2,17 @@
 
 https://rubymemeapp.herokuapp.com/
 
-# Ruby Meme App README
+# Ruby Meme App
 
 Ruby is a member of the Crystal Gems who made her official debut in "Jail Break". Originally a Homeworld Gem soldier assigned to protect Sapphire during a mission on Earth, the two accidentally fused and were forced to flee to prevent Ruby from being shattered by Blue Diamond.
 
-Things you may want to cover:
-
-- Ruby version: 2.6.3
-- Rails version: 6.0.4.6
-- Configuration:
-  Running server on Vagrant VM Ubuntu
-  Publishing on heroku:
-  $ heroku create
-  $ heroku stack
-  $ heroku stack:set heroku-18
-  $ git push heroku main
-- Dependencies:
-  gem 'pg', '1.1.4' in production group
-
 ### Description
 
-With this app you can:
+The goal was to create a web app to upload Ruby (a Steven Universe character) using the Ruby on Rails framework. Currently registered and logged in users can create, like, download and review memes, as well as update or delete their own memes.
 
-- Add Ruby Memes and describe them
-- Review Memes
-- Download Ruby Memes
-- Review them
+### The Stack:
+
+- Ruby version: 2.7.6
+- Rails version: 7.0.0
+- PostgreSQL
+- Heroku
