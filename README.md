@@ -8,7 +8,7 @@ Ruby is a member of the Crystal Gems who made her official debut in "Jail Break"
 
 ### Description
 
-The goal was to create a web app to upload Ruby (a Steven Universe character) using the Ruby on Rails framework. Currently registered and logged in users can create, like, download and review memes, as well as update or delete their own memes.
+Ruby on Rails web Application, that allows fans of Ruby - a character from the Steven Universe show - to upload images and gifs. Users can also like, review and download memes, and are able to see their activity from the user dashboard. The app was published on [Heroku](http://rubymemeapp.herokuapp.com/) and uses Amazon S3 bucket to store all files.
 
 ### The Stack:
 
