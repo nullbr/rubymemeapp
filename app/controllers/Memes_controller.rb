@@ -33,7 +33,11 @@ class MemesController < ApplicationController
   end
 
   def new
-    @meme = Meme.new
+    if Meme.count < 15
+      @meme = Meme.new
+    else
+      redirect_to root_path, alert: 'Sorry! Maximum Meme posts reached'
+    end
   end
 
   def create
