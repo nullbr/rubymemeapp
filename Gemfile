@@ -26,9 +26,6 @@ gem 'net-http'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
-# Use amazon aws for Active Storage
-gem 'aws-sdk-s3', require: false
-
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.6', require: false
 
@@ -78,3 +75,6 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 # Add prettier plugin to ruby
 gem 'prettier'
+
+# Env managment
+gem 'figaro'
