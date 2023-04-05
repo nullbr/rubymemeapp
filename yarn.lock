@@ -7649,7 +7649,7 @@ webpack-dev-middleware@^5.3.1:
 
 webpack-dev-server@^4.13.2:
   version "4.13.2"
-  resolved "https://registry.npmjs.org/webpack-dev-server/-/webpack-dev-server-4.13.2.tgz"
+  resolved "https://registry.yarnpkg.com/webpack-dev-server/-/webpack-dev-server-4.13.2.tgz#d97445481d78691efe6d9a3b230833d802fc31f9"
   integrity sha512-5i6TrGBRxG4vnfDpB6qSQGfnB6skGBXNL5/542w2uRGLimX6qeE5BQMLrzIC3JYV/xlGOv+s+hTleI9AZKUQNw==
   dependencies:
     "@types/bonjour" "^3.5.9"
