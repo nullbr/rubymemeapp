@@ -222,7 +222,9 @@ GEM
     rubyzip (2.3.2)
     sass-rails (6.0.0)
       sassc-rails (~> 2.1, >= 2.1.1)
-    sassc (2.4.0)
+    sassc (2.1.0)
+      ffi (~> 1.9)
+    sassc (2.1.0-x86_64-linux)
       ffi (~> 1.9)
     sassc-rails (2.1.2)
       railties (>= 4.0.0)
@@ -267,7 +269,7 @@ GEM
     turbolinks-source (5.2.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
-    uri (0.12.1)
+    uri (0.10.0.2 )
     web-console (4.2.0)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -298,10 +300,11 @@ DEPENDENCIES
   bcrypt (~> 3.1.7)
   bcrypt_pbkdf (>= 1.0, < 2.0)
   bootsnap (>= 1.4.6)
-  bootstrap-sass (= 3.4.1)
+  bootstrap-sass
   bootstrap-will_paginate (= 1.0.0)
   byebug
   capistrano (~> 3.11)
+  capistrano-bundler
   capistrano-passenger (~> 0.2.0)
   capistrano-rails (~> 1.4)
   capistrano-rbenv (~> 2.1, >= 2.1.4)
@@ -318,6 +321,7 @@ DEPENDENCIES
   rails (~> 7.0.0)
   ruby-debug-ide
   sass-rails (>= 6)
+  sassc (~> 2.1.0)
   selenium-webdriver
   spring
   spring-watcher-listen (~> 2.0.0)

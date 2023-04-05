@@ -29,8 +29,9 @@ gem 'net-http'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.6', require: false
 
-gem 'bootstrap-sass', '3.4.1'
+gem 'bootstrap-sass'
 gem 'bootstrap-will_paginate', '1.0.0'
+gem 'sassc', '~> 2.1.0'
 
 # Add sprockets to the gem file as it's now an optional depedency with rails 7.
 gem 'sprockets-rails'
@@ -43,6 +44,9 @@ gem 'capistrano', '~> 3.11'
 gem 'capistrano-rails', '~> 1.4'
 gem 'capistrano-passenger', '~> 0.2.0'
 gem 'capistrano-rbenv', '~> 2.1', '>= 2.1.4'
+gem 'capistrano-bundler'
+gem 'ed25519', '>= 1.2', '< 2.0'
+gem 'bcrypt_pbkdf', '>= 1.0', '< 2.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -71,11 +75,6 @@ group :test do
 
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
-end
-
-group :production do
-  gem 'ed25519', '>= 1.2', '< 2.0'
-  gem 'bcrypt_pbkdf', '>= 1.0', '< 2.0'
 end
 
 # group :production do
