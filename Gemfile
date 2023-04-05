@@ -31,6 +31,7 @@ gem 'bootsnap', '>= 1.4.6', require: false
 
 gem 'bootstrap-sass'
 gem 'bootstrap-will_paginate', '1.0.0'
+gem 'sassc', '~> 2.1.0'
 
 # Add sprockets to the gem file as it's now an optional depedency with rails 7.
 gem 'sprockets-rails'
