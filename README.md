@@ -1,6 +1,6 @@
-![Home Page](https://user-images.githubusercontent.com/94543524/157724548-3da9e036-949c-4a62-9681-0cebf1de5d53.png)
+[Ruby Memes](http://ruby-memes.bruno.buzz/)
 
-https://rubymemeapp.herokuapp.com/
+![Home Page](https://user-images.githubusercontent.com/94543524/157724548-3da9e036-949c-4a62-9681-0cebf1de5d53.png)
 
 # Ruby Meme App
 
@@ -8,11 +8,11 @@ Ruby is a member of the Crystal Gems who made her official debut in "Jail Break"
 
 ### Description
 
-Ruby on Rails web Application, that allows fans of Ruby - a character from the Steven Universe show - to upload images and gifs. Users can also like, review and download memes, and are able to see their activity from the user dashboard. The app was published on [Heroku](http://rubymemeapp.herokuapp.com/) and uses Amazon S3 bucket to store all files.
+Ruby on Rails web Application, that allows fans of Ruby - a character from the Steven Universe show - to upload images and gifs. Users can also like, review and download memes, and are able to see their activity from the user dashboard. The app was deployed to a Digital Ocean Ubuntu 20.04 server, and served by nginx and encrypted by certbot check it out at [Ruby Memes](http://ruby-memes.bruno.buzz/).
 
 ### The Stack:
 
-- Ruby version: 2.7.6
+- Ruby version: 2.7.8
 - Rails version: 7.0.0
 - PostgreSQL
-- Heroku
+- Ubuntu 20.04
