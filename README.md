@@ -12,7 +12,7 @@ Ruby on Rails web Application, that allows fans of Ruby - a character from the S
 
 ### The Stack:
 
-- Ruby version: 2.7.8
+- Ruby version: 3.1.2
 - Rails version: 7.0.0
 - PostgreSQL
 - Ubuntu 20.04
