@@ -87,4 +87,4 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'prettier'
 
 # Env managment
-gem 'figaro'
+gem 'dotenv-rails', '~> 2.7.6'

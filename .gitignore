@@ -49,3 +49,8 @@ node_modules
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
+
+# Ignore dotenv files
+/.env
+/.env.development
+/.env.production
