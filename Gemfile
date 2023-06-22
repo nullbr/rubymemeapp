@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.7.8'
+ruby '3.1.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 7.0.0'
@@ -36,17 +36,17 @@ gem 'sassc', '~> 2.1.0'
 # Add sprockets to the gem file as it's now an optional depedency with rails 7.
 gem 'sprockets-rails'
 
-# use postgres as database 
+# use postgres as database
 gem 'pg', '~> 1.0'
 
 # production deployment
-gem 'capistrano', '~> 3.11'
-gem 'capistrano-rails', '~> 1.4'
-gem 'capistrano-passenger', '~> 0.2.0'
-gem 'capistrano-rbenv', '~> 2.1', '>= 2.1.4'
-gem 'capistrano-bundler'
-gem 'ed25519', '>= 1.2', '< 2.0'
 gem 'bcrypt_pbkdf', '>= 1.0', '< 2.0'
+gem 'capistrano', '~> 3.11'
+gem 'capistrano-bundler'
+gem 'capistrano-passenger', '~> 0.2.0'
+gem 'capistrano-rails', '~> 1.4'
+gem 'capistrano-rbenv', '~> 2.1', '>= 2.1.4'
+gem 'ed25519', '>= 1.2', '< 2.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -54,7 +54,6 @@ group :development, :test do
 
   # Use sqlite3 as the database for Active Record
   # gem 'sqlite3', '~> 1.4'
-  gem 'debase'
   gem 'ruby-debug-ide'
 end
 
@@ -82,9 +81,6 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
-
-# Add prettier plugin to ruby
-gem 'prettier'
 
 # Env managment
 gem 'dotenv-rails', '~> 2.7.6'
