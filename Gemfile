@@ -4,7 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '3.1.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
-gem 'rails', '~> 7.0.0'
+gem 'rails', '~> 7.0.5'
 # Use Puma as the app server
 gem 'puma'
 # Use SCSS for stylesheets
@@ -48,6 +48,9 @@ gem 'capistrano-rails', '~> 1.4'
 gem 'capistrano-rbenv', '~> 2.1', '>= 2.1.4'
 gem 'ed25519', '>= 1.2', '< 2.0'
 
+gem 'psych', '< 4'
+gem "debase", "0.2.5.beta2", require: false
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
@@ -84,3 +87,4 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 # Env managment
 gem 'dotenv-rails', '~> 2.7.6'
+
